@@ -1,0 +1,11 @@
+Zadania do Wykładu 16: Drzewa i struktury hierarchiczne
+
+1. Zaimplementuj klasę `BinaryTree` z metodą `preorder_traversal()` (przechodzenie w porządku preorder: korzeń, lewe poddrzewo, prawe poddrzewo). Przetestuj na drzewie binarnym z co najmniej 5 węzłami.
+
+2. Dodaj do klasy `BinaryTree` metodę `postorder_traversal()` (przechodzenie w porządku postorder: lewe poddrzewo, prawe poddrzewo, korzeń). Porównaj wyniki z `inorder_traversal()` na tym samym drzewie.
+
+3. Napisz funkcję, która oblicza wysokość drzewa binarnego (najdłuższą ścieżkę od korzenia do liścia). Przetestuj na drzewie z różnymi strukturami (np. zrównoważonym i niezrównoważonym).
+
+4. Zaimplementuj metodę `count_leaves()` w klasie `BinaryTree`, która zlicza liście drzewa (węzły bez dzieci). Przetestuj na drzewie z co najmniej 7 węzłami.
+
+5. Napisz funkcję, która sprawdza, czy drzewo binarne jest pełne (każdy węzeł ma 0 lub 2 dzieci). Przetestuj na różnych drzewach.

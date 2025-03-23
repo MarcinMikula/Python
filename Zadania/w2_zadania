@@ -1,0 +1,11 @@
+Zadania do Wykładu 2: Podstawy Pythona – zmienne, typy danych, instrukcje warunkowe
+
+1. Napisz program, który wczytuje od użytkownika liczbę całkowitą i wypisuje, czy jest dodatnia, ujemna czy równa zero.
+
+2. Stwórz program, który wczytuje od użytkownika dwie liczby i wypisuje, która z nich jest większa, mniejsza lub czy są równe.
+
+3. Napisz program, który wczytuje od użytkownika rok i sprawdza, czy jest to rok przestępny (rok jest przestępny, jeśli jest podzielny przez 4, ale nie przez 100, chyba że jest podzielny przez 400).
+
+4. Zaimplementuj program, który wczytuje od użytkownika temperaturę w stopniach Celsjusza i wypisuje, czy jest zimno (< 0°C), chłodno (0–15°C), ciepło (16–25°C) czy gorąco (> 25°C).
+
+5. Napisz program, który wczytuje od użytkownika trzy liczby i sprawdza, czy mogą one być bokami trójkąta (suma długości dwóch boków musi być większa od długości trzeciego).

@@ -1,0 +1,11 @@
+Zadania do Wykładu 4: Funkcje
+
+1. Napisz funkcję, która przyjmuje dwie liczby i zwraca ich największy wspólny dzielnik (NWD) używając algorytmu Euklidesa.
+
+2. Stwórz funkcję, która przyjmuje liczbę całkowitą i zwraca True, jeśli liczba jest palindromem (czyta się tak samo od przodu i od tyłu, np. 121), oraz False w przeciwnym razie.
+
+3. Napisz funkcję, która przyjmuje listę liczb i zwraca ich średnią arytmetyczną. Jeśli lista jest pusta, zwróć 0.
+
+4. Zaimplementuj funkcję, która przyjmuje liczbę n i zwraca n-tą liczbę w ciągu Fibonacciego (używając rekurencji).
+
+5. Napisz funkcję, która przyjmuje ciąg znaków i zwraca liczbę samogłosek (a, e, i, o, u) w tym ciągu.

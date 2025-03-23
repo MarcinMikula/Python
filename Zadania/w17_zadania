@@ -1,0 +1,9 @@
+Zadania do Wykładu 17: Drzewa wyszukiwania binarnego (BST)
+
+1. Dodaj do klasy `BST` metodę `delete(value)`, która usuwa węzeł o podanej wartości z drzewa BST, zachowując jego właściwości. Przetestuj na drzewie z co najmniej 5 węzłami.
+
+2. Napisz funkcję, która znajduje najmniejszy element w drzewie BST. Przetestuj na drzewie z różnymi wartościami.
+
+3. Zaimplementuj metodę `count_nodes()` w klasie `BST`, która zlicza wszystkie węzły w drzewie. Przetestuj na drzewie z co najmniej 7 węzłami.
+
+4. Napisz funkcję, która sprawdza, czy drzewo binarne jest poprawnym drzewem BST (wszystkie wartości w lewym poddrzewie są mniejsze, a w prawym większe od korzenia). Przetestuj na różnych drzewach.

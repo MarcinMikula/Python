@@ -1,0 +1,7 @@
+Zadania do Wykładu 24: Wprowadzenie do uczenia maszynowego
+
+1. Zmodyfikuj algorytm k-NN, aby obsługiwał ważoną klasyfikację – wagi głosów sąsiadów są odwrotnie proporcjonalne do ich odległości (1/d). Przetestuj na zbiorze danych z co najmniej 6 punktami.
+
+2. Napisz funkcję, która dzieli zbiór danych na zbiór treningowy i testowy (np. 80% treningowy, 20% testowy), a następnie używa k-NN do klasyfikacji punktów testowych i oblicza dokładność (accuracy). Przetestuj na większym zbiorze danych.
+
+3. Zaimplementuj funkcję, która dla algorytmu k-NN oblicza macierz pomyłek (confusion matrix) dla dwóch klas. Przetestuj na zbiorze danych z co najmniej 10 punktami.

@@ -1,0 +1,9 @@
+Zadania do Wykładu 19: Przeszukiwanie grafów – BFS i najkrótsza ścieżka
+
+1. Zmodyfikuj metodę `bfs_shortest_path()` w klasie `Graph`, aby zwracała również długość najkrótszej ścieżki (liczbę krawędzi) między wierzchołkami start i end. Przetestuj na grafie z co najmniej 5 wierzchołkami.
+
+2. Napisz funkcję, która używa BFS do sprawdzenia, czy graf jest spójny (czy istnieje ścieżka między dowolnymi dwoma wierzchołkami). Przetestuj na różnych grafach.
+
+3. Zaimplementuj metodę `bfs_levels()`, która zwraca wierzchołki grafu pogrupowane według poziomów (odległości od wierzchołka startowego). Przetestuj na grafie z co najmniej 6 wierzchołkami.
+
+4. Użyj BFS do znalezienia najkrótszego cyklu w grafie nieskierowanym (jeśli istnieje). Przetestuj na grafie z co najmniej jednym cyklem.

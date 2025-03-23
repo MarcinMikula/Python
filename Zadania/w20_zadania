@@ -1,0 +1,7 @@
+Zadania do Wykładu 20: Algorytmy na grafach – Dijkstra
+
+1. Zmodyfikuj algorytm Dijkstry w klasie `Graph`, aby obsługiwał grafy skierowane (krawędzie jednokierunkowe). Przetestuj na grafie ważonym z co najmniej 5 wierzchołkami.
+
+2. Napisz funkcję, która używa algorytmu Dijkstry do znalezienia najkrótszej ścieżki między wszystkimi parami wierzchołków w grafie (tzw. all-pairs shortest paths). Przetestuj na małym grafie.
+
+3. Zaimplementuj metodę `find_shortest_cycle()` w klasie `Graph`, która używa algorytmu Dijkstry do znalezienia najkrótszego cyklu przechodzącego przez dany wierzchołek. Przetestuj na grafie z co najmniej jednym cyklem.

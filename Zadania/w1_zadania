@@ -1,0 +1,11 @@
+Zadania do Wykładu 1: Wprowadzenie do programowania i Pythona
+
+1. Napisz program, który wczytuje od użytkownika dwie liczby i wypisuje ich sumę, różnicę, iloczyn i iloraz (pamiętaj o obsłudze dzielenia przez zero).
+
+2. Stwórz program, który wczytuje od użytkownika jego imię i wiek, a następnie wypisuje powitanie w formacie: "Witaj, [imię]! Masz [wiek] lat."
+
+3. Napisz program, który wczytuje od użytkownika liczbę całkowitą i sprawdza, czy jest parzysta czy nieparzysta. Wypisz odpowiedni komunikat.
+
+4. Zaimplementuj prosty kalkulator, który pyta użytkownika o dwie liczby i operację (+, -, *, /), a następnie wykonuje wybraną operację i wypisuje wynik.
+
+5. Napisz program, który wczytuje od użytkownika trzy liczby i wypisuje największą z nich.

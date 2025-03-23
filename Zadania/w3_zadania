@@ -1,0 +1,11 @@
+Zadania do Wykładu 3: Pętle i iteracje
+
+1. Napisz program, który wypisuje liczby od 1 do 100, ale dla liczb podzielnych przez 3 wypisuje "Fizz", a dla liczb podzielnych przez 5 wypisuje "Buzz". Jeśli liczba jest podzielna przez 3 i 5, wypisuje "FizzBuzz".
+
+2. Stwórz program, który wczytuje od użytkownika liczbę n i wypisuje sumę wszystkich liczb od 1 do n.
+
+3. Napisz program, który wczytuje od użytkownika liczbę i wypisuje jej silnię (n! = 1 * 2 * ... * n).
+
+4. Zaimplementuj program, który wczytuje od użytkownika liczbę n i wypisuje n pierwszych liczb ciągu Fibonacciego.
+
+5. Napisz program, który wczytuje od użytkownika liczbę i sprawdza, czy jest to liczba pierwsza (podzielna tylko przez 1 i samą siebie).

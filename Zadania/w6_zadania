@@ -1,0 +1,11 @@
+Zadania do Wykładu 6: Słowniki i zbiory
+
+1. Napisz program, który wczytuje od użytkownika ciąg znaków i tworzy słownik zliczający, ile razy każda litera występuje w ciągu (ignoruj wielkość liter).
+
+2. Stwórz funkcję, która przyjmuje listę słów i zwraca słownik, gdzie kluczem jest długość słowa, a wartością lista słów o tej długości.
+
+3. Napisz program, który wczytuje od użytkownika dwie listy liczb i wypisuje ich część wspólną (używając zbiorów).
+
+4. Zaimplementuj funkcję, która przyjmuje słownik z ocenami studentów (klucz: imię, wartość: lista ocen) i zwraca średnią ocen dla każdego studenta.
+
+5. Napisz funkcję, która przyjmuje dwa zbiory i zwraca ich różnicę symetryczną (elementy, które są w jednym zbiorze, ale nie w drugim).

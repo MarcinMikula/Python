@@ -1,0 +1,9 @@
+Zadania do Wykładu 10: Sortowanie przez scalanie (merge sort)
+
+1. Zaimplementuj funkcję `merge()`, która scala dwie posortowane listy w jedną posortowaną listę. Przetestuj na różnych parach list.
+
+2. Zmodyfikuj algorytm sortowania przez scalanie, aby sortował listę w kolejności malejącej. Przetestuj na liście z co najmniej 10 elementami.
+
+3. Napisz program, który wczytuje od użytkownika listę liczb, sortuje ją za pomocą merge sort, i wypisuje posortowaną listę oraz czas wykonania sortowania.
+
+4. Zaimplementuj funkcję, która używa merge sort do sortowania listy krotek (x, y) według wartości x. Przetestuj na liście z co najmniej 5 krotkami.

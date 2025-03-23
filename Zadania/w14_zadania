@@ -1,0 +1,11 @@
+Zadania do Wykładu 14: Dziedziczenie w programowaniu obiektowym
+
+1. Stwórz klasę bazową `Vehicle` z atrybutami `brand` i `year` oraz metodą `describe()`, która wypisuje informacje o pojeździe. Następnie utwórz klasy pochodne `Car` i `Bicycle`, które dodają własne atrybuty (np. `number_of_doors` dla `Car` i `has_basket` dla `Bicycle`) i nadpisz metodę `describe()`.
+
+2. Zdefiniuj klasę bazową `Shape` z metodą `area()`, która zwraca 0. Utwórz klasy pochodne `Circle` i `Rectangle`, które obliczają pole odpowiednio dla koła (πr^2) i prostokąta (width * height). Przetestuj działanie dla różnych wartości.
+
+3. Stwórz klasę bazową `Employee` z atrybutami `name` i `salary` oraz metodą `get_info()`. Utwórz klasy pochodne `Manager` i `Developer`, które dodają własne atrybuty (np. `department` dla `Manager` i `programming_language` dla `Developer`) i nadpisz metodę `get_info()`.
+
+4. Zdefiniuj klasę bazową `Animal` z metodą `make_sound()`. Utwórz klasy pochodne `Dog`, `Cat` i `Bird`, które nadpisują metodę `make_sound()`, aby wypisywać odpowiedni dźwięk (np. "Woof", "Meow", "Chirp"). Przetestuj dla różnych zwierząt.
+
+5. Stwórz klasę bazową `Account` z atrybutami `balance` i metodami `deposit()` oraz `withdraw()`. Utwórz klasy pochodne `SavingsAccount` i `CheckingAccount`, które dodają własne funkcjonalności (np. `interest_rate` dla `SavingsAccount` i `overdraft_limit` dla `CheckingAccount`) i odpowiednio modyfikują metodę `withdraw()`.

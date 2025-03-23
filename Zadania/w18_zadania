@@ -1,0 +1,9 @@
+Zadania do Wykładu 18: Wprowadzenie do grafów
+
+1. Dodaj do klasy `Graph` metodę `count_vertices()`, która zwraca liczbę wierzchołków, oraz metodę `count_edges()`, która zwraca liczbę krawędzi w grafie. Przetestuj na grafie z co najmniej 5 wierzchołkami.
+
+2. Zaimplementuj metodę `has_path(u, v)` w klasie `Graph`, która używa DFS do sprawdzenia, czy istnieje ścieżka między wierzchołkami u i v. Przetestuj na grafie z co najmniej 6 wierzchołkami.
+
+3. Napisz funkcję, która znajduje wszystkie wierzchołki osiągalne z danego wierzchołka startowego za pomocą DFS. Zwróć listę wierzchołków w kolejności odwiedzin.
+
+4. Zaimplementuj graf skierowany (digraph), modyfikując klasę `Graph` tak, aby krawędzie były jednokierunkowe. Przetestuj DFS na takim grafie.

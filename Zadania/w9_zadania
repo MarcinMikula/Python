@@ -1,0 +1,9 @@
+Zadania do Wykładu 9: Wyszukiwanie binarne, sortowanie bąbelkowe i przez wybór
+
+1. Zaimplementuj funkcję wyszukiwania binarnego, która przyjmuje posortowaną listę i element do znalezienia, i zwraca indeks tego elementu (lub -1, jeśli elementu nie ma).
+
+2. Napisz funkcję, która sortuje listę liczb metodą sortowania bąbelkowego i zwraca posortowaną listę. Przetestuj na liście z co najmniej 10 elementami.
+
+3. Zaimplementuj funkcję sortowania przez wybór (selection sort), która sortuje listę liczb w kolejności malejącej. Przetestuj na liście z co najmniej 10 elementami.
+
+4. Napisz program, który wczytuje od użytkownika listę liczb, sortuje ją metodą bąbelkową, a następnie wyszukuje podaną przez użytkownika liczbę za pomocą wyszukiwania binarnego.

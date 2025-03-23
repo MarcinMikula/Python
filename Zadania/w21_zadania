@@ -1,0 +1,7 @@
+Zadania do Wykładu 21: Dynamiczne programowanie – wprowadzenie
+
+1. Zmodyfikuj funkcję `fib_tabulation()` tak, aby zwracała listę wszystkich wartości ciągu Fibonacciego od F(0) do F(n). Przetestuj dla n=10.
+
+2. Napisz funkcję, która oblicza n-tą liczbę w ciągu Fibonacciego za pomocą dynamicznego programowania, ale zoptymalizuj ją pod kątem pamięci, używając tylko dwóch zmiennych zamiast tablicy. Przetestuj dla n=20.
+
+3. Zaimplementuj funkcję obliczającą silnię (n!) za pomocą dynamicznego programowania (bottom-up). Przetestuj dla różnych wartości n.

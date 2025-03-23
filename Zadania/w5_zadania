@@ -1,0 +1,11 @@
+Zadania do Wykładu 5: Listy i krotki
+
+1. Napisz program, który wczytuje od użytkownika listę liczb (użytkownik wpisuje liczby, aż poda 0) i wypisuje ich sumę oraz średnią.
+
+2. Stwórz funkcję, która przyjmuje listę liczb i zwraca nową listę zawierającą tylko liczby parzyste.
+
+3. Napisz program, który wczytuje od użytkownika listę słów i wypisuje je w odwrotnej kolejności.
+
+4. Zaimplementuj funkcję, która przyjmuje dwie listy i zwraca listę elementów wspólnych dla obu list (bez duplikatów).
+
+5. Napisz funkcję, która przyjmuje listę krotek (x, y) reprezentujących punkty w 2D i zwraca punkt najbliższy początku układu współrzędnych (0, 0).

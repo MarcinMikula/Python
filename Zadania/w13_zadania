@@ -1,0 +1,7 @@
+Zadania do Wykładu 13: Wprowadzenie do programowania obiektowego
+
+1. Stwórz klasę `Rectangle` z atrybutami `width` i `height` oraz metodami `area()` (oblicza pole) i `perimeter()` (oblicza obwód). Przetestuj dla różnych prostokątów.
+
+2. Zaimplementuj klasę `BankAccount` z atrybutami `account_number` i `balance` oraz metodami `deposit(amount)` i `withdraw(amount)`. Dodaj sprawdzanie, czy wypłata jest możliwa (saldo nie może być ujemne).
+
+3. Napisz klasę `Student` z atrybutami `name`, `id` i `grades` (lista ocen) oraz metodą `average_grade()`, która oblicza średnią ocen. Przetestuj dla kilku studentów.

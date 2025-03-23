@@ -1,0 +1,7 @@
+Zadania do Wykładu 11: Wyszukiwanie metodą bisekcji, funkcje jako obiekty
+
+1. Napisz funkcję, która używa metody bisekcji do znajdowania pierwiastka równania f(x) = x^2 - 4 w przedziale [0, 3]. Przyjmij dokładność 0.01.
+
+2. Zaimplementuj funkcję `apply_function()`, która przyjmuje listę liczb i funkcję jako argument, i stosuje tę funkcję do każdego elementu listy. Przetestuj z funkcjami lambda, np. podnoszącą do kwadratu i mnożącą przez 2.
+
+3. Napisz funkcję wyższego rzędu `compose(f, g)`, która zwraca funkcję będącą złożeniem funkcji f i g (tzn. f(g(x))). Przetestuj z prostymi funkcjami, np. f(x) = x + 1, g(x) = x * 2.

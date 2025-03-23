@@ -1,0 +1,9 @@
+Zadania do Wykładu 7: Wejście/wyjście i obsługa plików
+
+1. Napisz program, który wczytuje od użytkownika listę słów i zapisuje je do pliku tekstowego, każde słowo w nowej linii.
+
+2. Stwórz program, który odczytuje plik tekstowy zawierający liczby (jedna liczba w linii) i wypisuje ich sumę oraz średnią.
+
+3. Napisz program, który wczytuje od użytkownika dane (imię, wiek, miasto) i zapisuje je do pliku w formacie CSV. Następnie odczytaj ten plik i wypisz dane w formie tabeli.
+
+4. Zaimplementuj funkcję, która odczytuje plik tekstowy i zlicza, ile razy występuje w nim każde słowo (słowa oddzielone spacjami). Wynik zapisz do nowego pliku w formacie: "słowo: liczba_wystąpień".

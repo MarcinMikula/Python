@@ -1,0 +1,7 @@
+Zadania do Wykładu 22: Dynamiczne programowanie – problem plecakowy
+
+1. Zmodyfikuj funkcję `knapsack_01()` tak, aby zoptymalizować pamięć – zamiast tablicy 2D (n x W) użyj tablicy 1D o rozmiarze W. Przetestuj na zestawie danych z co najmniej 5 przedmiotami.
+
+2. Napisz funkcję, która rozwiązuje problem plecakowy z powtórzeniami (można brać każdy przedmiot wielokrotnie). Użyj dynamicznego programowania. Przetestuj na małym zestawie danych.
+
+3. Zaimplementuj funkcję, która dla problemu plecakowego 0-1 zwraca nie tylko maksymalną wartość i wybrane przedmioty, ale także minimalną wagę potrzebną do osiągnięcia tej wartości. Przetestuj na zestawie danych.

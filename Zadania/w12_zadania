@@ -1,0 +1,7 @@
+Zadania do Wykładu 12: Tablice haszujące
+
+1. Zaimplementuj prostą tablicę haszującą z liniowym rozwiązywaniem kolizji (linear probing). Dodaj metody `insert(key, value)` i `get(key)`. Przetestuj na małym zestawie danych.
+
+2. Napisz funkcję, która używa tablicy haszującej do zliczania, ile razy każde słowo występuje w liście słów. Przetestuj na liście z co najmniej 10 słowami.
+
+3. Zaimplementuj tablicę haszującą z rozwiązywaniem kolizji przez łańcuchowanie (chaining, czyli listy w każdym kubełku). Dodaj metody `insert(key, value)` i `get(key)`. Przetestuj na zestawie danych.

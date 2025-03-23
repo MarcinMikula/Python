@@ -1,0 +1,11 @@
+Zadania do Wykładu 15: Abstrakcja danych i struktury danych
+
+1. Zaimplementuj klasę `Stack` z metodami `push()`, `pop()` i `is_empty()`. Dodaj metodę `peek()`, która zwraca element na górze stosu bez jego usuwania. Przetestuj działanie stosu na liście liczb.
+
+2. Zaimplementuj klasę `Queue` z metodami `enqueue()`, `dequeue()` i `is_empty()`. Dodaj metodę `front()`, która zwraca pierwszy element kolejki bez jego usuwania. Przetestuj działanie kolejki na liście napisów.
+
+3. Użyj klasy `Stack` do sprawdzenia, czy podany ciąg znaków (np. "((()))") jest poprawnie sparowanym ciągiem nawiasów. Zwróć True, jeśli nawiasy są poprawnie sparowane, i False w przeciwnym razie.
+
+4. Użyj klasy `Queue` do symulacji kolejki klientów w sklepie. Każdy klient ma imię i czas obsługi (w minutach). Napisz funkcję, która oblicza całkowity czas oczekiwania dla wszystkich klientów.
+
+5. Zaimplementuj klasę `Deque` (kolejka dwustronna) z metodami `add_front()`, `add_rear()`, `remove_front()` i `remove_rear()`. Przetestuj działanie, dodając i usuwając elementy z obu końców.
