@@ -52,7 +52,7 @@ Z tego powodu kod i notatki w tym repozytorium są udostępniane na licencji **C
 
 ## Autor
 
-Notatki i kod zostały przygotowane przez [Twoje imię lub pseudonim], na podstawie materiałów z kursu MIT 6.00.
+Notatki i kod zostały przygotowane przeze mnie, na podstawie materiałów z kursu MIT 6.00.
 
 ## Podziękowania
 
