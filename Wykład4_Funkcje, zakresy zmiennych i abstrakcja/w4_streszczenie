@@ -1,0 +1,36 @@
+Wykład 4: Funkcje, zakresy zmiennych i abstrakcja
+
+Wykład 4, prowadzony przez profesora Johna Guttaga, wprowadza funkcje jako kluczowy element programowania. Guttag omawia, jak funkcje pozwalają na modularność, abstrakcję i ponowne wykorzystanie kodu. Skupia się na definiowaniu funkcji, przekazywaniu argumentów, zwracaniu wartości oraz na zakresie zmiennych. Kluczowe tematy:
+
+1. Funkcje i abstrakcja:
+   - Funkcje to nazwane bloki kodu, które wykonują określone zadanie.
+   - Definiowanie funkcji: użycie słowa kluczowego def, parametry, return.
+   - Przykład: Funkcja obliczająca kwadrat liczby.
+   - Abstrakcja: Funkcje ukrywają szczegóły implementacji – użytkownik musi znać tylko nazwę, parametry i co funkcja zwraca.
+
+2. Zakresy zmiennych (scope):
+   - Zmienne lokalne: istnieją tylko wewnątrz funkcji.
+   - Zmienne globalne: dostępne w całym programie.
+   - Przykład: Zmienna zdefiniowana w funkcji nie jest widoczna na zewnątrz, chyba że użyjemy return.
+
+3. Przekazywanie argumentów:
+   - Argumenty są przekazywane do funkcji podczas jej wywołania.
+   - Funkcje mogą mieć wiele parametrów.
+   - Przykład: Funkcja obliczająca pierwiastek kwadratowy metodą prób i błędów (kontynuacja z Wykładu 2).
+
+4. Matematyczne aspekty:
+   - Funkcje jako sposób na wyrażanie operacji matematycznych, np. f(x) = x^2.
+   - Przykład: Obliczanie pierwiastka kwadratowego z użyciem funkcji – modularne podejście.
+   - Wprowadzenie do iteracyjnych metod rozwiązywania równań (kontynuacja metody prób i błędów).
+
+5. Przykłady praktyczne:
+   - Funkcja obliczająca kwadrat liczby.
+   - Funkcja sprawdzająca, czy liczba jest parzysta.
+   - Funkcja aproksymująca pierwiastek kwadratowy (z Wykładu 2, ale teraz jako funkcja).
+
+6. Kluczowe wnioski:
+   - Funkcje pozwalają na organizację kodu i unikanie powtarzania (DRY – Don’t Repeat Yourself).
+   - Zakresy zmiennych są kluczowe dla unikania konfliktów nazw i błędów.
+   - Modularność ułatwia debugowanie i testowanie kodu.
+
+Guttag podkreśla, że funkcje są podstawą dobrego programowania – pozwalają na budowanie bardziej złożonych programów w sposób zorganizowany i czytelny.

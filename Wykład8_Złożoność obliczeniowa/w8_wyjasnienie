@@ -1,0 +1,74 @@
+Wyjaśnienie kodu z Wykładu 8 krok po kroku
+
+Przykład 1: Wyszukiwanie liniowe – złożoność O(n)
+1. def linear_search(lst, target): Definiujemy funkcję wyszukiwania liniowego, która szuka elementu target w liście lst.
+2. for i in range(len(lst)): Iterujemy po indeksach listy.
+3. if lst[i] == target: Sprawdzamy, czy element na pozycji i jest równy target.
+4. return i: Jeśli znajdziemy element, zwracamy jego indeks.
+5. return -1: Jeśli nie znajdziemy elementu, zwracamy -1.
+6. numbers = [3, 1, 4, 1, 5, 9, 2, 6]: Tworzymy listę liczb.
+7. target = 5: Ustawiamy wartość, której szukamy.
+8. index = linear_search(numbers, target): Wywołujemy funkcję:
+   - i = 0: 3 != 5
+   - i = 1: 1 != 5
+   - i = 2: 4 != 5
+   - i = 3: 1 != 5
+   - i = 4: 5 == 5, zwracamy 4
+9. print("Indeks elementu", target, "to:", index): Wyświetlamy wynik: "Indeks elementu 5 to: 4".
+
+Złożoność:
+- W najgorszym przypadku (element na końcu lub brak elementu) musimy przejść przez całą listę – O(n), gdzie n to długość listy.
+
+Przykład 2: Obliczanie silni – iteracyjnie (O(n))
+1. def factorial_iterative(n): Definiujemy funkcję obliczającą silnię iteracyjnie.
+2. result = 1: Inicjalizujemy wynik na 1.
+3. for i in range(1, n + 1): Iterujemy od 1 do n.
+4. result = result * i: Mnożymy wynik przez i:
+   - i = 1: result = 1 * 1 = 1
+   - i = 2: result = 1 * 2 = 2
+   - i = 3: result = 2 * 3 = 6
+   - i = 4: result = 6 * 4 = 24
+   - i = 5: result = 24 * 5 = 120
+5. return result: Zwracamy wynik.
+6. n = 5: Ustawiamy n na 5.
+7. print("Silnia (iteracyjnie) z", n, "to:", factorial_iterative(n)): Wyświetlamy wynik: 120.
+
+Złożoność:
+- Pętla wykonuje n iteracji, każda z jedną operacją mnożenia – O(n).
+
+Przykład 3: Obliczanie silni – rekurencyjnie (O(n))
+1. def factorial_recursive(n): Definiujemy funkcję obliczającą silnię rekurencyjnie.
+2. if n == 0: Warunek bazowy: silnia z 0 to 1.
+3. return 1: Zwracamy 1 dla n = 0.
+4. return n * factorial_recursive(n - 1): Rekurencyjnie obliczamy n! = n * (n-1)!.
+5. n = 5: Ustawiamy n na 5.
+6. Wywołanie factorial_recursive(5):
+   - factorial_recursive(5) = 5 * factorial_recursive(4)
+   - factorial_recursive(4) = 4 * factorial_recursive(3)
+   - factorial_recursive(3) = 3 * factorial_recursive(2)
+   - factorial_recursive(2) = 2 * factorial_recursive(1)
+   - factorial_recursive(1) = 1 * factorial_recursive(0)
+   - factorial_recursive(0) = 1
+   - Wracamy: 1 * 1 * 2 * 3 * 4 * 5 = 120
+7. print("Silnia (rekurencyjnie) z", n, "to:", factorial_recursive(n)): Wyświetlamy wynik: 120.
+
+Złożoność:
+- Funkcja wykonuje n wywołań rekurencyjnych, każde z jedną operacją mnożenia – O(n).
+- Dodatkowo: Rekurencja zużywa pamięć na stosie (n poziomów zagnieżdżenia).
+
+Przykład 4: Pętla zagnieżdżona – złożoność O(n^2)
+1. def nested_loop_example(n): Definiujemy funkcję z dwiema zagnieżdżonymi pętlami.
+2. count = 0: Inicjalizujemy licznik operacji.
+3. for i in range(n): Zewnętrzna pętla wykonuje n iteracji.
+4. for j in range(n): Wewnętrzna pętla wykonuje n iteracji dla każdego i.
+5. count = count + 1: Zwiększamy licznik w każdej iteracji wewnętrznej pętli.
+6. return count: Zwracamy całkowitą liczbę operacji.
+7. n = 4: Ustawiamy n na 4.
+8. operations = nested_loop_example(n): Wywołujemy funkcję:
+   - Zewnętrzna pętla: 4 iteracje (i = 0, 1, 2, 3).
+   - Wewnętrzna pętla: 4 iteracje dla każdego i (j = 0, 1, 2, 3).
+   - Łącznie: 4 * 4 = 16 operacji.
+9. print("Liczba operacji dla n =", n, "to:", operations): Wyświetlamy wynik: 16.
+
+Złożoność:
+- Dwie zagnieżdżone pętle: n * n = n^2 operacji – O(n^2).

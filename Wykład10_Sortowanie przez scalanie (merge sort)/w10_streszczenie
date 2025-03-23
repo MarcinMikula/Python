@@ -1,0 +1,33 @@
+Wykład 10: Sortowanie przez scalanie (merge sort)
+
+Wykład 10, prowadzony przez profesora Johna Guttaga, wprowadza bardziej efektywny algorytm sortowania – sortowanie przez scalanie (merge sort). Guttag omawia, jak działa ten algorytm, jego złożoność oraz dlaczego jest bardziej efektywny niż sortowanie bąbelkowe czy przez wybór. Kluczowe tematy:
+
+1. Sortowanie przez scalanie (merge sort):
+   - Algorytm oparty na zasadzie "dziel i rządź" (divide and conquer).
+   - Działa w dwóch fazach:
+     - Dzielenie: Lista jest rekurencyjnie dzielona na mniejsze podlisty, aż każda ma 1 element.
+     - Scalanie: Podlisty są łączone w posortowane listy.
+   - Złożoność: O(n log n) – znacznie szybsze niż O(n^2) dla sortowania bąbelkowego czy przez wybór.
+
+2. Jak działa merge sort:
+   - Dzielenie: Lista o długości n jest dzielona na dwie podlisty o długości n/2, aż do uzyskania jednoelementowych list.
+   - Scalanie: Dwie posortowane podlisty są łączone w jedną posortowaną listę przez porównywanie elementów.
+   - Przykład: Sortowanie listy [64, 34, 25, 12, 22, 11, 90].
+
+3. Matematyczne aspekty:
+   - Złożoność czasowa: O(n log n).
+     - Dzielenie: log n poziomów rekurencji (log_2(n)).
+     - Scalanie: Na każdym poziomie wykonujemy O(n) operacji.
+   - Złożoność pamięciowa: O(n) – potrzebujemy dodatkowej pamięci na podlisty.
+   - Porównanie z O(n^2): Dla n = 1000, O(n^2) to 1 milion operacji, a O(n log n) to około 10 tysięcy.
+
+4. Przykłady praktyczne:
+   - Implementacja sortowania przez scalanie.
+   - Porównanie czasu wykonania dla różnych algorytmów sortowania (konceptualne, bez kodu).
+
+5. Kluczowe wnioski:
+   - Merge sort jest znacznie bardziej efektywny niż algorytmy O(n^2), szczególnie dla dużych danych.
+   - Podejście "dziel i rządź" jest potężną techniką w projektowaniu algorytmów.
+   - Wadą merge sort jest większe zużycie pamięci w porównaniu do sortowania bąbelkowego czy przez wybór.
+
+Guttag podkreśla, że merge sort to przykład algorytmu, który osiąga optymalną złożoność dla sortowania porównawczego (O(n log n)), i jest często używany w praktyce, np. w bibliotekach standardowych (jak Pythonowe sorted() czy list.sort()).

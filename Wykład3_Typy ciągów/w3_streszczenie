@@ -1,0 +1,38 @@
+Wykład 3: Typy ciągów, wejście/wyjście
+
+Wykład 3, prowadzony przez profesora Johna Guttaga, koncentruje się na pracy z ciągami znaków (stringami) oraz podstawowym wejściem i wyjściem w Pythonie. Guttag wprowadza stringi jako podstawowy typ danych i pokazuje, jak manipulować nimi w programach. Omawia też, jak pobierać dane od użytkownika i wyświetlać wyniki. Kluczowe tematy:
+
+1. Stringi jako typ danych:
+   - String to sekwencja znaków, np. "hello".
+   - Dostęp do znaków przez indeksy: indeksy zaczynają się od 0 (np. "hello"[0] to "h").
+   - Operacje na stringach:
+     - Konkatenacja (+): łączenie stringów, np. "hello" + " world".
+     - Powielanie (*): np. "ha" * 3 daje "hahaha".
+     - Długość: funkcja len(), np. len("hello") zwraca 5.
+   - Wycinanie (slicing): np. "hello"[1:4] zwraca "ell".
+
+2. Wejście i wyjście:
+   - Funkcja input(): pobiera dane od użytkownika jako string.
+   - Konwersja typów: np. int(input()) zamienia string na liczbę całkowitą.
+   - Funkcja print(): wyświetla dane w konsoli.
+
+3. Iteracja po stringach:
+   - Użycie pętli for do iterowania po znakach w stringu.
+   - Przykład: zliczanie samogłosek w stringu.
+
+4. Matematyczne aspekty:
+   - Wprowadzenie do kodowania znaków (ASCII): każdy znak w stringu ma przypisaną wartość liczbową.
+   - Funkcje ord() i chr(): ord("a") zwraca 97, chr(97) zwraca "a".
+   - Przykład: przesunięcie znaków o 1 w alfabecie (proste szyfrowanie).
+
+5. Przykłady praktyczne:
+   - Powitanie użytkownika po wpisaniu imienia.
+   - Zliczanie samogłosek w podanym słowie.
+   - Proste szyfrowanie przez przesunięcie znaków.
+
+6. Kluczowe wnioski:
+   - Stringi są immutable (niezmienne) – nie można zmienić pojedynczego znaku w stringu, ale można stworzyć nowy string.
+   - Operacje na stringach są podstawą wielu algorytmów, np. w przetwarzaniu tekstu.
+   - Wejście/wyjście to kluczowy element interakcji z użytkownikiem.
+
+Guttag podkreśla, że stringi i operacje wejścia/wyjścia są fundamentem do pracy z danymi tekstowymi, a zrozumienie ich otwiera drogę do bardziej zaawansowanych tematów, takich jak przetwarzanie danych czy algorytmy tekstowe.

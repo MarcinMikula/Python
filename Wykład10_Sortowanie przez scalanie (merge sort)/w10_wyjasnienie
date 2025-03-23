@@ -1,0 +1,58 @@
+Wyjaśnienie kodu z Wykładu 10 krok po kroku
+
+Przykład 1: Sortowanie przez scalanie (merge sort)
+1. def merge(left, right): Definiujemy funkcję merge, która scala dwie posortowane listy.
+2. result = []: Tworzymy pustą listę na wynik.
+3. i = j = 0: Inicjalizujemy indeksy dla list left i right.
+4. while i < len(left) and j < len(right): Porównujemy elementy z obu list, dopóki nie wyczerpiemy jednej z nich.
+5. if left[i] <= right[j]: Jeśli element z left jest mniejszy lub równy, dodajemy go do wyniku.
+6. result.append(left[i]): Dodajemy element z left.
+7. i += 1: Zwiększamy indeks i.
+8. else: Jeśli element z right jest mniejszy, dodajemy go.
+9. result.append(right[j]): Dodajemy element z right.
+10. j += 1: Zwiększamy indeks j.
+11. result.extend(left[i:]): Dodajemy pozostałe elementy z left, jeśli jakieś zostały.
+12. result.extend(right[j:]): Dodajemy pozostałe elementy z right, jeśli jakieś zostały.
+13. return result: Zwracamy scaloną listę.
+14. def merge_sort(lst): Definiujemy funkcję merge_sort.
+15. if len(lst) <= 1: Warunek bazowy: listy o długości 0 lub 1 są już posortowane.
+16. return lst: Zwracamy listę bez zmian.
+17. mid = len(lst) // 2: Dzielimy listę na dwie połowy.
+18. left = merge_sort(lst[:mid]): Rekurencyjnie sortujemy lewą połowę.
+19. right = merge_sort(lst[mid:]): Rekurencyjnie sortujemy prawą połowę.
+20. return merge(left, right): Scalamy posortowane połowy.
+21. numbers = [64, 34, 25, 12, 22, 11, 90]: Tworzymy listę do posortowania.
+22. sorted_list = merge_sort(numbers): Wywołujemy merge_sort:
+    - Dzielenie:
+      - [64, 34, 25, 12, 22, 11, 90] → [64, 34, 25, 12] i [22, 11, 90]
+      - [64, 34, 25, 12] → [64, 34] i [25, 12]
+      - [64, 34] → [64] i [34]
+      - [25, 12] → [25] i [12]
+      - [22, 11, 90] → [22, 11] i [90]
+      - [22, 11] → [22] i [11]
+    - Scalanie:
+      - [64] i [34] → [34, 64]
+      - [25] i [12] → [12, 25]
+      - [34, 64] i [12, 25] → [12, 25, 34, 64]
+      - [22] i [11] → [11, 22]
+      - [11, 22] i [90] → [11, 22, 90]
+      - [12, 25, 34, 64] i [11, 22, 90] → [11, 12, 22, 25, 34, 64, 90]
+23. print("Posortowana lista (merge sort):", sorted_list): Wyświetlamy wynik: [11, 12, 22, 25, 34, 64, 90].
+
+Złożoność:
+- Dzielenie: log n poziomów (log_2(n)).
+- Scalanie: Na każdym poziomie O(n) operacji.
+- Łącznie: O(n log n). Dla n = 7: log_2(7) ≈ 2.8, około 7 * 2.8 = 20 operacji.
+
+Przykład 2: Prosty przykład scalania dwóch posortowanych list
+1. left = [11, 22, 34]: Tworzymy posortowaną listę left.
+2. right = [12, 25, 64, 90]: Tworzymy posortowaną listę right.
+3. merged = merge(left, right): Wywołujemy funkcję merge:
+    - i = 0, j = 0: left[0] = 11 <= right[0] = 12, result = [11], i = 1
+    - i = 1, j = 0: left[1] = 22 > right[0] = 12, result = [11, 12], j = 1
+    - i = 1, j = 1: left[1] = 22 <= right[1] = 25, result = [11, 12, 22], i = 2
+    - i = 2, j = 1: left[2] = 34 > right[1] = 25, result = [11, 12, 22, 25], j = 2
+    - i = 2, j = 2: left[2] = 34 <= right[2] = 64, result = [11, 12, 22, 25, 34], i = 3
+    - i = 3: left wyczerpane, dodajemy right[2:] = [64, 90]
+    - result = [11, 12, 22, 25, 34, 64, 90]
+4. print("Scalone listy:", merged): Wyświetlamy wynik: [11, 12, 22, 25, 34, 64, 90].

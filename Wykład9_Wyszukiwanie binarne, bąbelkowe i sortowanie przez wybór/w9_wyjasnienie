@@ -1,0 +1,75 @@
+Wyjaśnienie kodu z Wykładu 9 krok po kroku
+
+Przykład 1: Wyszukiwanie binarne – złożoność O(log n)
+1. def binary_search(lst, target): Definiujemy funkcję wyszukiwania binarnego, która szuka elementu target w posortowanej liście lst.
+2. left = 0: Ustawiamy lewą granicę na początek listy.
+3. right = len(lst) - 1: Ustawiamy prawą granicę na koniec listy.
+4. while left <= right: Pętla działa, dopóki przestrzeń poszukiwań nie jest pusta.
+5. mid = (left + right) // 2: Obliczamy środkowy indeks.
+6. if lst[mid] == target: Sprawdzamy, czy element w środku jest równy target.
+7. return mid: Jeśli tak, zwracamy indeks.
+8. elif lst[mid] < target: Jeśli element w środku jest mniejszy od target, szukamy w prawej połowie.
+9. left = mid + 1: Przesuwamy lewą granicę.
+10. else: Jeśli element w środku jest większy od target, szukamy w lewej połowie.
+11. right = mid - 1: Przesuwamy prawą granicę.
+12. return -1: Jeśli nie znajdziemy elementu, zwracamy -1.
+13. sorted_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]: Tworzymy posortowaną listę.
+14. target = 6: Ustawiamy wartość, której szukamy.
+15. index = binary_search(sorted_list, target): Wywołujemy funkcję:
+    - left = 0, right = 8, mid = 4: lst[4] = 5 < 6, więc left = 5
+    - left = 5, right = 8, mid = 6: lst[6] = 7 > 6, więc right = 5
+    - left = 5, right = 5, mid = 5: lst[5] = 6 == 6, zwracamy 5
+16. print("Indeks elementu", target, "to:", index): Wyświetlamy wynik: "Indeks elementu 6 to: 5".
+
+Złożoność:
+- W każdej iteracji przestrzeń poszukiwań jest dzielona na pół: O(log n).
+- Dla n = 9 potrzeba maksymalnie 4 kroki (log_2(9) ≈ 3.17).
+
+Przykład 2: Sortowanie bąbelkowe – złożoność O(n^2)
+1. def bubble_sort(lst): Definiujemy funkcję sortowania bąbelkowego.
+2. n = len(lst): Pobieramy długość listy.
+3. for i in range(n): Zewnętrzna pętla – n iteracji.
+4. for j in range(0, n - i - 1): Wewnętrzna pętla – porównujemy sąsiednie elementy.
+5. if lst[j] > lst[j + 1]: Jeśli elementy są w złej kolejności, zamieniamy je.
+6. lst[j], lst[j + 1] = lst[j + 1], lst[j]: Zamiana miejscami.
+7. return lst: Zwracamy posortowaną listę.
+8. numbers = [64, 34, 25, 12, 22, 11, 90]: Tworzymy listę do posortowania.
+9. bubble_sort(numbers): Wywołujemy funkcję:
+    - Pierwsza iteracja (i = 0): [34, 25, 12, 22, 11, 64, 90]
+    - Druga iteracja (i = 1): [25, 12, 22, 11, 34, 64, 90]
+    - Trzecia iteracja (i = 2): [12, 22, 11, 25, 34, 64, 90]
+    - Czwarta iteracja (i = 3): [12, 11, 22, 25, 34, 64, 90]
+    - Piąta iteracja (i = 4): [11, 12, 22, 25, 34, 64, 90]
+    - Szósta i siódma iteracja: bez zmian
+10. print("Posortowana lista (bubble sort):", numbers): Wyświetlamy wynik: [11, 12, 22, 25, 34, 64, 90].
+
+Złożoność:
+- Zewnętrzna pętla: n iteracji.
+- Wewnętrzna pętla: średnio n/2 porównań na iterację.
+- Łącznie: O(n^2) porównań i zamian.
+
+Przykład 3: Sortowanie przez wybór – złożoność O(n^2)
+1. def selection_sort(lst): Definiujemy funkcję sortowania przez wybór.
+2. n = len(lst): Pobieramy długość listy.
+3. for i in range(n): Iterujemy po liście, wybierając miejsce dla kolejnego elementu.
+4. min_idx = i: Zakładamy, że minimalny element jest na pozycji i.
+5. for j in range(i + 1, n): Szukamy mniejszego elementu w niesortowanej części.
+6. if lst[j] < lst[min_idx]: Jeśli znajdziemy mniejszy element, aktualizujemy min_idx.
+7. min_idx = j: Zapisujemy indeks mniejszego elementu.
+8. lst[i], lst[min_idx] = lst[min_idx], lst[i]: Zamieniamy elementy.
+9. return lst: Zwracamy posortowaną listę.
+10. numbers = [64, 34, 25, 12, 22, 11, 90]: Tworzymy listę do posortowania.
+11. selection_sort(numbers): Wywołujemy funkcję:
+    - i = 0: min_idx = 5 (11), zamiana: [11, 34, 25, 12, 22, 64, 90]
+    - i = 1: min_idx = 3 (12), zamiana: [11, 12, 25, 34, 22, 64, 90]
+    - i = 2: min_idx = 4 (22), zamiana: [11, 12, 22, 34, 25, 64, 90]
+    - i = 3: min_idx = 4 (25), zamiana: [11, 12, 22, 25, 34, 64, 90]
+    - i = 4: min_idx = 4 (34), bez zamiany
+    - i = 5: min_idx = 5 (64), bez zamiany
+    - i = 6: min_idx = 6 (90), bez zamiany
+12. print("Posortowana lista (selection sort):", numbers): Wyświetlamy wynik: [11, 12, 22, 25, 34, 64, 90].
+
+Złożoność:
+- Zewnętrzna pętla: n iteracji.
+- Wewnętrzna pętla: n-1, n-2, ..., 1 porównań.
+- Łącznie: n * (n-1)/2 porównań – O(n^2).

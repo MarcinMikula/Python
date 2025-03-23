@@ -1,0 +1,73 @@
+Wyjaśnienie kodu z Wykładu 2 krok po kroku
+
+Przykład 1: Rozgałęzienia – sprawdzanie, czy liczba jest dodatnia, ujemna czy zero
+1. x = 5: Ustawiamy zmienną x na wartość 5.
+2. if x > 0: Sprawdzamy, czy x jest większe od 0. Tutaj 5 > 0, więc warunek jest prawdziwy.
+3. print(x, "jest dodatnie"): Wyświetlamy komunikat "5 jest dodatnie".
+4. elif x < 0: Ten warunek nie jest sprawdzany, bo poprzedni if był prawdziwy.
+5. else: Ta część też nie jest wykonywana, bo if się wykonał.
+
+Przykład 2: Pętla while – sumowanie liczb od 1 do 5
+1. suma = 0: Inicjalizujemy zmienną suma na 0.
+2. i = 1: Ustawiamy zmienną i na 1 – od tej liczby zaczynamy.
+3. while i <= 5: Pętla działa, dopóki i jest mniejsze lub równe 5.
+4. suma = suma + i: Dodajemy i do sumy. W pierwszej iteracji: suma = 0 + 1 = 1.
+5. i = i + 1: Zwiększamy i o 1. W pierwszej iteracji: i = 2.
+6. Pętla powtarza się dla i = 2, 3, 4, 5:
+   - i = 2: suma = 1 + 2 = 3
+   - i = 3: suma = 3 + 3 = 6
+   - i = 4: suma = 6 + 4 = 10
+   - i = 5: suma = 10 + 5 = 15
+7. print("Suma liczb od 1 do 5 wynosi:", suma): Wyświetlamy wynik: 15.
+
+Przykład 3: Pętla for – iteracja po zakresie liczb
+1. range(1, 6): Tworzy sekwencję liczb od 1 do 5 (6 nie jest uwzględniane).
+2. for j in range(1, 6): Pętla przypisuje zmiennej j kolejne wartości: 1, 2, 3, 4, 5.
+3. print("Liczba:", j): W każdej iteracji wyświetlamy wartość j:
+   - Liczba: 1
+   - Liczba: 2
+   - Liczba: 3
+   - Liczba: 4
+   - Liczba: 5
+
+Przykład 4: Aproksymacja pierwiastka kwadratowego metodą prób i błędów
+1. y = 25: Ustawiamy liczbę, której pierwiastek szukamy.
+2. x = 0: Zaczynamy od x = 0.
+3. krok = 0.1: Ustalamy przyrost x w każdej iteracji.
+4. epsilon = 0.01: Definiujemy dokładność – jak blisko x * x ma być do y.
+5. licznik_krokow = 0: Inicjalizujemy licznik iteracji.
+6. while x * x <= y: Pętla działa, dopóki x * x nie przekroczy y.
+7. if abs(x * x - y) < epsilon: Sprawdzamy, czy x * x jest wystarczająco blisko y.
+   - Dla x = 5.0: x * x = 25, abs(25 - 25) = 0, co jest mniejsze od 0.01, więc warunek jest spełniony.
+8. print("Przybliżony pierwiastek z", y, "to", x): Wyświetlamy x = 5.0.
+9. print("Liczba kroków:", licznik_krokow): Wyświetlamy liczbę iteracji (50, bo 5.0 / 0.1 = 50).
+10. break: Kończymy pętlę, gdy znajdziemy wynik.
+11. x = x + krok: W każdej iteracji zwiększamy x o 0.1 (przed breakiem).
+12. licznik_krokow = licznik_krokow + 1: Zliczamy iteracje.
+13. else: Jeśli pętla zakończy się bez znalezienia wyniku, wyświetlamy komunikat o niepowodzeniu (tutaj się nie wykonuje).
+
+Matematyczny kontekst:
+- Szukamy x, gdzie x^2 ≈ 25. Zaczynamy od x = 0 i zwiększamy o 0.1 w każdej iteracji.
+- Dla x = 5.0: 5.0^2 = 25, co jest dokładnie równe 25, więc kończymy.
+- Liczba kroków (50) pokazuje, że metoda jest nieefektywna – wymaga wielu iteracji.
+
+Przykład 5: Sprawdzanie parzystości liczby w pętli
+1. n = 10: Zaczynamy od liczby 10.
+2. while n > 0: Pętla działa, dopóki n jest większe od 0.
+3. if n % 2 == 0: Sprawdzamy, czy n jest parzyste (reszta z dzielenia przez 2 wynosi 0).
+   - Dla n = 10: 10 % 2 = 0, więc parzyste.
+4. else: Jeśli n nie jest parzyste, to jest nieparzyste.
+   - Dla n = 9: 9 % 2 = 1, więc nieparzyste.
+5. print(...): Wyświetlamy, czy liczba jest parzysta czy nieparzysta.
+6. n = n - 1: Zmniejszamy n o 1 w każdej iteracji.
+7. Wynik:
+   - 10 jest parzyste
+   - 9 jest nieparzyste
+   - 8 jest parzyste
+   - 7 jest nieparzyste
+   - 6 jest parzyste
+   - 5 jest nieparzyste
+   - 4 jest parzyste
+   - 3 jest nieparzyste
+   - 2 jest parzyste
+   - 1 jest nieparzyste

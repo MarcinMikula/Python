@@ -1,0 +1,12 @@
+Wykład 1: Wprowadzenie i cele kursu; Typy danych, operatory i zmienne
+
+Wykład 1 kursu MIT 6.00, prowadzony przez Erica Grimsona, wprowadza do informatyki i programowania w Pythonie. Jest skierowany do początkujących i skupia się na myśleniu obliczeniowym – rozwiązywaniu problemów za pomocą algorytmów i kodu. Kluczowe tematy:
+1. Informatyka to nauka o procesach obliczeniowych – jak formułować i rozwiązywać problemy.
+2. Python wybrano ze względu na prostotę i wszechstronność.
+3. Rodzaje wiedzy: deklaratywna (fakty, np. pierwiastek z 16 to 4) i imperatywna (kroki, np. algorytm obliczania pierwiastka).
+4. Podstawy programowania:
+   - Program to sekwencja instrukcji dla komputera.
+   - Typy danych: int (całkowite), float (zmiennoprzecinkowe), string (ciągi znaków).
+   - Operatory: + (dodawanie), - (odejmowanie), * (mnożenie), / (dzielenie), ** (potęgowanie).
+   - Zmienne przechowują dane i można je modyfikować.
+Grimson pokazuje przykłady w Pythonie, np. dodawanie liczb czy łączenie stringów, podkreślając, że programowanie wymaga praktyki. Kurs ma uczyć nie tylko składni, ale systematycznego podejścia do problemów.

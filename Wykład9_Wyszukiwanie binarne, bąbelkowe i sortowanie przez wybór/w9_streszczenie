@@ -1,0 +1,35 @@
+Wykład 9: Wyszukiwanie binarne, bąbelkowe i sortowanie przez wybór
+
+Wykład 9, prowadzony przez profesora Johna Guttaga, wprowadza bardziej efektywne algorytmy wyszukiwania i sortowania. Guttag omawia wyszukiwanie binarne jako przykład algorytmu o złożoności logarytmicznej oraz dwa proste algorytmy sortowania: sortowanie bąbelkowe i sortowanie przez wybór. Kluczowe tematy:
+
+1. Wyszukiwanie binarne (binary search):
+   - Algorytm działa na posortowanej liście i dzieli przestrzeń poszukiwań na pół w każdej iteracji.
+   - Złożoność: O(log n) – znacznie szybsze niż wyszukiwanie liniowe (O(n)).
+   - Przykład: Szukanie elementu w posortowanej liście.
+
+2. Sortowanie bąbelkowe (bubble sort):
+   - Prosty algorytm sortowania: porównuje sąsiednie elementy i zamienia je, jeśli są w złej kolejności.
+   - Złożoność: O(n^2) – nieefektywne dla dużych danych, ale łatwe do zrozumienia.
+   - Przykład: Sortowanie listy liczb.
+
+3. Sortowanie przez wybór (selection sort):
+   - Algorytm szuka najmniejszego elementu w niesortowanej części listy i umieszcza go na początku.
+   - Złożoność: O(n^2) – również nieefektywne, ale nieco bardziej intuicyjne niż bąbelkowe.
+   - Przykład: Sortowanie listy liczb.
+
+4. Matematyczne aspekty:
+   - Wyszukiwanie binarne: Logarytmiczne dzielenie przestrzeni (log_2(n)) – np. dla n = 1024 potrzeba maksymalnie 10 kroków.
+   - Sortowanie: Analiza liczby porównań i zamian w sortowaniu bąbelkowym i przez wybór (n * (n-1)/2 porównań w najgorszym przypadku).
+   - Porównanie efektywności: O(log n) vs O(n) vs O(n^2).
+
+5. Przykłady praktyczne:
+   - Wyszukiwanie binarne w posortowanej liście.
+   - Implementacja sortowania bąbelkowego.
+   - Implementacja sortowania przez wybór.
+
+6. Kluczowe wnioski:
+   - Wyszukiwanie binarne jest znacznie szybsze niż liniowe, ale wymaga posortowanych danych.
+   - Sortowanie bąbelkowe i przez wybór są proste, ale nieefektywne – w kolejnych wykładach pojawią się lepsze algorytmy (np. mergesort).
+   - Zrozumienie złożoności algorytmów pozwala na wybór odpowiedniego narzędzia do problemu.
+
+Guttag podkreśla, że efektywne algorytmy, takie jak wyszukiwanie binarne, są kluczowe w pracy z dużymi zbiorami danych, a zrozumienie prostych algorytmów sortowania buduje podstawy do nauki bardziej zaawansowanych metod.

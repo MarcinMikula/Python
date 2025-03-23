@@ -1,0 +1,36 @@
+Wykład 6: Listy i mutowalność, aliasing, klonowanie
+
+Wykład 6, prowadzony przez profesora Johna Guttaga, pogłębia temat list w Pythonie, skupiając się na ich mutowalności, a także wprowadza pojęcia aliasingu i klonowania. Guttag omawia, jak listy mogą być modyfikowane, oraz jakie pułapki mogą wyniknąć z ich mutowalności, zwłaszcza przy współdzieleniu referencji. Kluczowe tematy:
+
+1. Mutowalność list:
+   - Listy są zmienne (mutable), co pozwala na zmianę ich elementów, dodawanie i usuwanie.
+   - Metody: append (dodaje element), extend (rozszerza listę o inną listę), pop (usuwa element), sort (sortuje listę).
+   - Przykład: Modyfikacja listy w funkcji.
+
+2. Aliasing:
+   - Aliasing występuje, gdy dwie zmienne wskazują na tę samą listę w pamięci.
+   - Zmiana jednej zmiennej wpływa na drugą, bo obie odwołują się do tego samego obiektu.
+   - Przykład: Jeśli L1 = [1, 2, 3] i L2 = L1, to zmiana L2 wpłynie na L1.
+
+3. Klonowanie:
+   - Klonowanie tworzy nową, niezależną kopię listy.
+   - Sposoby klonowania: użycie slice (L[:]) lub metody copy().
+   - Przykład: Tworzenie kopii listy, by uniknąć aliasingu.
+
+4. Matematyczne aspekty:
+   - Listy jako reprezentacja wektorów – operacje na listach można interpretować jako operacje matematyczne.
+   - Przykład: Obliczanie średniej arytmetycznej elementów listy.
+   - Sortowanie: Wprowadzenie do idei porządkowania danych, co jest kluczowe w algorytmach.
+
+5. Przykłady praktyczne:
+   - Modyfikacja listy w funkcji i obserwacja efektów.
+   - Aliasing: Pokazanie, jak zmiany w jednej liście wpływają na drugą.
+   - Klonowanie: Tworzenie niezależnej kopii listy.
+   - Obliczanie średniej elementów listy.
+
+6. Kluczowe wnioski:
+   - Mutowalność list jest potężna, ale wymaga ostrożności – aliasing może prowadzić do nieoczekiwanych błędów.
+   - Klonowanie pozwala uniknąć problemów z aliasingiem, gdy potrzebujemy niezależnych kopii danych.
+   - Zrozumienie, jak Python zarządza pamięcią (referencje), jest kluczowe dla efektywnego programowania.
+
+Guttag podkreśla, że mutowalność i aliasing to fundamentalne koncepcje, które mają wpływ na projektowanie programów i unikanie błędów, zwłaszcza w bardziej złożonych aplikacjach.

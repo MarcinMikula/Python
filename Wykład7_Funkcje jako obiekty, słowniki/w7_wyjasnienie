@@ -1,0 +1,60 @@
+Wyjaśnienie kodu z Wykładu 7 krok po kroku
+
+Przykład 1: Funkcje jako obiekty – przekazywanie funkcji jako argumentu
+1. def square(x): Definiujemy funkcję square, która zwraca kwadrat x.
+2. return x * x: Funkcja oblicza x * x.
+3. def apply_function(func, value): Definiujemy funkcję apply_function, która przyjmuje funkcję (func) i wartość (value).
+4. return func(value): Wywołujemy przekazaną funkcję na wartości value i zwracamy wynik.
+5. num = 5: Ustawiamy zmienną num na 5.
+6. result = apply_function(square, num): Wywołujemy apply_function, przekazując funkcję square i wartość 5. square(5) = 25.
+7. print("Kwadrat", num, "to:", result): Wyświetlamy wynik: "Kwadrat 5 to: 25".
+
+Przykład 2: Użycie map() do stosowania funkcji na liście
+1. numbers = [1, 2, 3, 4, 5]: Tworzymy listę liczb.
+2. squared = list(map(square, numbers)): Używamy map() do zastosowania funkcji square na każdym elemencie listy numbers.
+   - map(square, numbers) tworzy iterator: square(1) = 1, square(2) = 4, ..., square(5) = 25.
+   - list() konwertuje iterator na listę.
+3. print("Kwadraty liczb:", squared): Wyświetlamy wynik: [1, 4, 9, 16, 25].
+
+Matematyczny kontekst:
+- Mapowanie to odpowiednik matematycznego f(x) dla każdego x w zbiorze. Tutaj f(x) = x^2, a zbiór to [1, 2, 3, 4, 5].
+
+Przykład 3: Podstawowe operacje na słownikach
+1. d = {"a": 1, "b": 2, "c": 3}: Tworzymy słownik z trzema parami klucz-wartość.
+2. print(d["a"]): Dostęp do wartości dla klucza "a". Wyświetla 1.
+3. d["d"] = 4: Dodajemy nową parę klucz-wartość.
+4. print(d): Wyświetlamy słownik: {"a": 1, "b": 2, "c": 3, "d": 4}.
+5. d.pop("b"): Usuwamy parę o kluczu "b".
+6. print(d): Wyświetlamy słownik po usunięciu: {"a": 1, "c": 3, "d": 4}.
+
+Przykład 4: Zliczanie wystąpień liter w stringu
+1. text = "hello": Ustawiamy string do analizy.
+2. letter_count = {}: Tworzymy pusty słownik do zliczania liter.
+3. for char in text: Iterujemy po znakach w stringu: "h", "e", "l", "l", "o".
+4. if char in letter_count: Sprawdzamy, czy znak jest już w słowniku.
+   - Dla "h", "e", "o": nie ma, więc przechodzimy do else.
+   - Dla drugiego "l": jest, więc zwiększamy licznik.
+5. letter_count[char] = letter_count[char] + 1: Zwiększamy licznik dla znaku.
+6. else: Jeśli znak nie jest w słowniku, dodajemy go z wartością 1.
+7. letter_count[char] = 1: Ustawiamy początkową wartość 1.
+   - "h": 1
+   - "e": 1
+   - "l": 1 (potem 2, bo "l" występuje drugi raz)
+   - "o": 1
+8. print("Wystąpienia liter:", letter_count): Wyświetlamy wynik: {"h": 1, "e": 1, "l": 2, "o": 1}.
+
+Przykład 5: Słownik jako funkcja matematyczna (f(x) = x^2)
+1. square_dict = {}: Tworzymy pusty słownik.
+2. for x in range(1, 6): Iterujemy po liczbach od 1 do 5.
+3. square_dict[x] = x * x: Dla każdego x obliczamy x^2 i zapisujemy jako parę klucz-wartość:
+   - x = 1: 1 * 1 = 1
+   - x = 2: 2 * 2 = 4
+   - x = 3: 3 * 3 = 9
+   - x = 4: 4 * 4 = 16
+   - x = 5: 5 * 5 = 25
+4. print("Słownik f(x) = x^2:", square_dict): Wyświetlamy słownik: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}.
+5. print("f(3) =", square_dict[3]): Dostęp do wartości dla klucza 3. Wyświetla 9.
+
+Matematyczny kontekst:
+- Słownik reprezentuje funkcję f(x) = x^2. Klucz to argument (x), wartość to wynik (f(x)).
+- Dla x = 3: f(3) = 3^2 = 9.

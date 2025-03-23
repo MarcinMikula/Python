@@ -1,0 +1,53 @@
+Wyjaśnienie kodu z Wykładu 6 krok po kroku
+
+Przykład 1: Mutowalność list – metody modyfikujące
+1. L = [3, 1, 4, 1, 5]: Tworzymy listę L.
+2. L.append(9): Dodajemy 9 na koniec listy.
+3. print("Po append:", L): Wyświetlamy listę: [3, 1, 4, 1, 5, 9].
+4. L.extend([2, 7]): Rozszerzamy listę o elementy z innej listy [2, 7].
+5. print("Po extend:", L): Wyświetlamy listę: [3, 1, 4, 1, 5, 9, 2, 7].
+6. L.sort(): Sortujemy listę w kolejności rosnącej.
+7. print("Po sort:", L): Wyświetlamy listę: [1, 1, 2, 3, 4, 5, 7, 9].
+8. L.pop(2): Usuwamy element o indeksie 2 (wartość 2).
+9. print("Po pop:", L): Wyświetlamy listę: [1, 1, 3, 4, 5, 7, 9].
+
+Przykład 2: Modyfikacja listy w funkcji
+1. def modify_list(lst): Definiujemy funkcję, która modyfikuje listę przez dodanie elementu.
+2. lst.append(100): Dodajemy 100 na koniec listy przekazanej jako argument.
+3. print("Wewnątrz funkcji:", lst): Wyświetlamy listę wewnątrz funkcji.
+4. L = [1, 2, 3]: Tworzymy listę L.
+5. modify_list(L): Wywołujemy funkcję, przekazując L. Funkcja modyfikuje L, dodając 100.
+6. print("Po wywołaniu funkcji:", L): Wyświetlamy L po wywołaniu funkcji: [1, 2, 3, 100].
+   - Listy są mutowalne, więc zmiana w funkcji wpływa na oryginalną listę.
+
+Przykład 3: Aliasing – współdzielenie referencji
+1. L1 = [1, 2, 3]: Tworzymy listę L1.
+2. L2 = L1: Tworzymy zmienną L2, która wskazuje na tę samą listę co L1 (aliasing).
+3. L2.append(4): Dodajemy 4 do L2, ale ponieważ L2 i L1 wskazują na tę samą listę, L1 też się zmienia.
+4. print("L1 po zmianie L2:", L1): Wyświetlamy L1: [1, 2, 3, 4].
+5. print("L2:", L2): Wyświetlamy L2: [1, 2, 3, 4].
+   - Obie zmienne wskazują na ten sam obiekt w pamięci, więc zmiana jednej wpływa na drugą.
+
+Przykład 4: Klonowanie – tworzenie niezależnej kopii
+1. L1 = [1, 2, 3]: Tworzymy listę L1.
+2. L2 = L1[:]: Tworzymy kopię L1 za pomocą slice – L2 jest nową, niezależną listą.
+3. L2.append(4): Dodajemy 4 do L2. Tym razem L1 się nie zmienia, bo L2 to osobna lista.
+4. print("L1 po klonowaniu:", L1): Wyświetlamy L1: [1, 2, 3].
+5. print("L2 po klonowaniu:", L2): Wyświetlamy L2: [1, 2, 3, 4].
+
+Przykład 5: Obliczanie średniej elementów listy (matematyka)
+1. numbers = [10, 20, 30, 40, 50]: Tworzymy listę liczb.
+2. total = 0: Inicjalizujemy zmienną total na 0.
+3. for num in numbers: Iterujemy po elementach listy.
+4. total = total + num: Dodajemy każdy element do sumy:
+   - total = 0 + 10 = 10
+   - total = 10 + 20 = 30
+   - total = 30 + 30 = 60
+   - total = 60 + 40 = 100
+   - total = 100 + 50 = 150
+5. average = total / len(numbers): Obliczamy średnią: 150 / 5 = 30.0.
+6. print("Średnia:", average): Wyświetlamy wynik: 30.0.
+
+Matematyczny kontekst:
+- Średnia arytmetyczna to (Σx_i) / n, gdzie x_i to elementy listy, a n to liczba elementów.
+- Tutaj: (10 + 20 + 30 + 40 + 50) / 5 = 150 / 5 = 30.0.

@@ -1,0 +1,32 @@
+Wykład 7: Funkcje jako obiekty, słowniki
+
+Wykład 7, prowadzony przez profesora Johna Guttaga, wprowadza bardziej zaawansowane koncepcje związane z funkcjami oraz nowy typ danych – słowniki. Guttag pokazuje, jak funkcje mogą być traktowane jako obiekty w Pythonie, co otwiera nowe możliwości, oraz omawia słowniki jako strukturę danych do przechowywania par klucz-wartość. Kluczowe tematy:
+
+1. Funkcje jako obiekty:
+   - W Pythonie funkcje są obiektami pierwszej klasy – można je przypisywać do zmiennych, przekazywać jako argumenty i zwracać z innych funkcji.
+   - Przykład: Przekazywanie funkcji jako argumentu do innej funkcji (np. do obliczania wartości funkcji matematycznych).
+   - Wprowadzenie do mapowania: użycie funkcji map() do stosowania funkcji na elementach listy.
+
+2. Słowniki (dictionaries):
+   - Słownik to mutowalna struktura danych przechowująca pary klucz-wartość, np. {"a": 1, "b": 2}.
+   - Klucze muszą być unikalne i niezmienne (np. stringi, liczby, krotki); wartości mogą być dowolnego typu.
+   - Operacje: dodawanie par (dict[key] = value), usuwanie (pop), dostęp do wartości (dict[key]).
+   - Przykład: Zliczanie wystąpień słów w tekście.
+
+3. Matematyczne aspekty:
+   - Słowniki jako reprezentacja funkcji matematycznych: klucz to argument, wartość to wynik (np. f(x) = x^2).
+   - Mapowanie: Odpowiednik matematycznego stosowania funkcji do zbioru danych (np. f(x) dla każdego x w zbiorze).
+   - Przykład: Obliczanie wartości funkcji kwadratowej dla listy argumentów.
+
+4. Przykłady praktyczne:
+   - Przekazywanie funkcji jako argumentu do obliczania wartości.
+   - Użycie map() do podnoszenia elementów listy do kwadratu.
+   - Zliczanie wystąpień liter w stringu za pomocą słownika.
+   - Tworzenie słownika reprezentującego funkcję matematyczną.
+
+5. Kluczowe wnioski:
+   - Traktowanie funkcji jako obiektów pozwala na bardziej elastyczne i funkcjonalne programowanie.
+   - Słowniki są potężnym narzędziem do przechowywania i wyszukiwania danych w sposób klucz-wartość.
+   - Zrozumienie tych koncepcji otwiera drogę do bardziej zaawansowanych technik, takich jak programowanie funkcyjne.
+
+Guttag podkreśla, że funkcje jako obiekty i słowniki to kluczowe narzędzia w Pythonie, które znajdują zastosowanie w wielu dziedzinach, od analizy danych po algorytmy.

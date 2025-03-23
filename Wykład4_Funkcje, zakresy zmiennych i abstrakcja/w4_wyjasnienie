@@ -1,0 +1,54 @@
+Wyjaśnienie kodu z Wykładu 4 krok po kroku
+
+Przykład 1: Funkcja obliczająca kwadrat liczby
+1. def square(x): Definiujemy funkcję square, która przyjmuje jeden parametr x.
+2. return x * x: Funkcja zwraca kwadrat x (x * x).
+3. num = 4: Ustawiamy zmienną num na 4.
+4. result = square(num): Wywołujemy funkcję square z argumentem 4. Funkcja oblicza 4 * 4 = 16 i zwraca wynik.
+5. print("Kwadrat liczby", num, "to:", result): Wyświetlamy wynik: "Kwadrat liczby 4 to: 16".
+
+Przykład 2: Funkcja sprawdzająca parzystość
+1. def is_even(n): Definiujemy funkcję is_even, która przyjmuje parametr n.
+2. if n % 2 == 0: Sprawdzamy, czy n jest parzyste (reszta z dzielenia przez 2 wynosi 0).
+3. return True: Jeśli warunek jest prawdziwy, zwracamy True.
+4. else: Jeśli warunek nie jest spełniony, liczba jest nieparzysta.
+5. return False: Zwracamy False.
+6. number = 6: Ustawiamy zmienną number na 6.
+7. if is_even(number): Wywołujemy funkcję is_even(6). 6 % 2 = 0, więc funkcja zwraca True.
+8. print(number, "jest parzyste"): Ponieważ is_even zwróciło True, wyświetlamy "6 jest parzyste".
+9. else: Ta część nie jest wykonywana, bo warunek if był prawdziwy.
+
+Przykład 3: Funkcja aproksymująca pierwiastek kwadratowy
+1. def sqrt_approx(y, epsilon=0.01, krok=0.1): Definiujemy funkcję z trzema parametrami: y (liczba, której pierwiastek szukamy), epsilon (dokładność), krok (przyrost). epsilon i krok mają wartości domyślne.
+2. x = 0: Zaczynamy od x = 0.
+3. licznik_krokow = 0: Inicjalizujemy licznik iteracji.
+4. while x * x <= y: Pętla działa, dopóki x * x nie przekroczy y.
+5. if abs(x * x - y) < epsilon: Sprawdzamy, czy x * x jest wystarczająco blisko y.
+   - Dla x = 5.0: x * x = 25, abs(25 - 25) = 0, co jest mniejsze od 0.01.
+6. return x, licznik_krokow: Zwracamy krotkę: znaleziony pierwiastek i liczba kroków.
+7. x = x + krok: Zwiększamy x o krok (0.1) w każdej iteracji.
+8. licznik_krokow = licznik_krokow + 1: Zliczamy iteracje.
+9. return None, licznik_krokow: Jeśli pętla zakończy się bez wyniku, zwracamy None i liczbę kroków.
+10. y = 25: Ustawiamy liczbę, której pierwiastek szukamy.
+11. result, steps = sqrt_approx(y): Wywołujemy funkcję i rozpakowujemy zwróconą krotkę.
+12. if result is not None: Sprawdzamy, czy znaleziono wynik.
+13. print("Przybliżony pierwiastek z", y, "to:", result): Wyświetlamy wynik: 5.0.
+14. print("Liczba kroków:", steps): Wyświetlamy liczbę kroków: 50 (bo 5.0 / 0.1 = 50).
+
+Matematyczny kontekst:
+- Funkcja implementuje metodę prób i błędów (exhaustive enumeration) z Wykładu 2, ale teraz jest modularna. Szukamy x, gdzie x^2 ≈ 25, z krokiem 0.1. Wynik (5.0) jest dokładny, ale metoda wymaga 50 iteracji, co pokazuje jej nieefektywność.
+
+Przykład 4: Zakres zmiennych – zmienna lokalna
+1. def test_scope(): Definiujemy funkcję test_scope.
+2. local_var = 10: Tworzymy zmienną lokalną local_var wewnątrz funkcji.
+3. print("Wewnątrz funkcji:", local_var): Wyświetlamy wartość local_var: 10.
+4. test_scope(): Wywołujemy funkcję, co wyświetla "Wewnątrz funkcji: 10".
+5. print(local_var): Ta linia jest zakomentowana, bo spowodowałaby błąd – local_var istnieje tylko wewnątrz funkcji i nie jest dostępna na zewnątrz.
+
+Przykład 5: Funkcja z wieloma parametrami
+1. def add_and_multiply(a, b, c): Definiujemy funkcję z trzema parametrami: a, b, c.
+2. return (a + b) * c: Funkcja najpierw dodaje a i b, a potem mnoży wynik przez c.
+3. result = add_and_multiply(2, 3, 4): Wywołujemy funkcję z argumentami 2, 3, 4.
+   - Najpierw: 2 + 3 = 5
+   - Potem: 5 * 4 = 20
+4. print("Wynik (2 + 3) * 4:", result): Wyświetlamy wynik: 20.

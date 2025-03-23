@@ -1,0 +1,35 @@
+Wykład 8: Złożoność obliczeniowa
+
+Wykład 8, prowadzony przez profesora Johna Guttaga, wprowadza pojęcie złożoności obliczeniowej, które jest kluczowe dla analizy efektywności algorytmów. Guttag omawia, jak mierzyć wydajność programów i dlaczego niektóre algorytmy są szybsze od innych, nawet jeśli rozwiązują ten sam problem. Kluczowe tematy:
+
+1. Złożoność obliczeniowa:
+   - Złożoność czasowa: Jak czas wykonania algorytmu rośnie wraz z rozmiarem danych (n).
+   - Notacja dużego O (Big O): Sposób opisu górnej granicy wzrostu, np. O(n), O(n^2).
+   - Przykłady:
+     - Stała: O(1) – np. dostęp do elementu listy.
+     - Liniowa: O(n) – np. iteracja po liście.
+     - Kwadratowa: O(n^2) – np. dwie zagnieżdżone pętle.
+
+2. Analiza algorytmów:
+   - Porównanie różnych podejść do tego samego problemu.
+   - Przykład: Szukanie elementu w liście:
+     - Wyszukiwanie liniowe: O(n) – sprawdzamy każdy element.
+     - Wyszukiwanie w posortowanej liście (później omówione jako bisekcja): O(log n).
+   - Przykład: Obliczanie silni – iteracyjnie (O(n)) vs rekurencyjnie (O(n)).
+
+3. Matematyczne aspekty:
+   - Wzrost funkcji: Liniowy (n), kwadratowy (n^2), logarytmiczny (log n).
+   - Złożoność pamięciowa: Ile pamięci zużywa algorytm (np. rekurencja zużywa więcej pamięci przez stos).
+   - Przykład: Analiza liczby operacji w pętli zagnieżdżonej (n * n = n^2).
+
+4. Przykłady praktyczne:
+   - Wyszukiwanie liniowe w liście.
+   - Obliczanie silni iteracyjnie i rekurencyjnie – porównanie złożoności.
+   - Prosty przykład pętli zagnieżdżonej (O(n^2)).
+
+5. Kluczowe wnioski:
+   - Złożoność obliczeniowa pozwala przewidzieć, jak algorytm będzie się skalował dla dużych danych.
+   - Wybór odpowiedniego algorytmu ma ogromny wpływ na wydajność programu.
+   - Proste algorytmy (np. wyszukiwanie liniowe) są łatwe do zrozumienia, ale często nieefektywne – w kolejnych wykładach pojawią się lepsze metody (np. bisekcja).
+
+Guttag podkreśla, że zrozumienie złożoności obliczeniowej jest kluczowe dla projektowania efektywnych programów, zwłaszcza w kontekście dużych zbiorów danych.

@@ -1,0 +1,58 @@
+Wyjaśnienie kodu z Wykładu 3 krok po kroku
+
+Przykład 1: Podstawowe operacje na stringach
+1. s = "hello": Tworzymy string s o wartości "hello".
+2. print(s[0]): Dostęp do pierwszego znaku (indeks 0). Wyświetla "h".
+3. print(s[1:4]): Wycinanie (slicing) od indeksu 1 do 3 (4 nie jest uwzględniane). Wyświetla "ell".
+4. print(s + " world"): Konkatenacja – łączymy stringi. Wyświetla "hello world".
+5. print(s * 2): Powielanie – string s jest powtórzony 2 razy. Wyświetla "hellohello".
+6. print(len(s)): Funkcja len() zwraca długość stringu. Wyświetla 5.
+
+Przykład 2: Wejście i wyjście – powitanie użytkownika
+1. name = input("Podaj swoje imię: "): Funkcja input() wyświetla prompt i czeka na dane od użytkownika. Wpisane dane (np. "Jan") są zapisane w zmiennej name jako string.
+2. greeting = "Cześć, " + name + "!": Tworzymy nowy string przez konkatenację. Jeśli name = "Jan", to greeting = "Cześć, Jan!".
+3. print(greeting): Wyświetlamy powitanie, np. "Cześć, Jan!".
+
+Przykład 3: Iteracja po stringu – zliczanie samogłosek
+1. word = "python": Ustawiamy string, w którym będziemy zliczać samogłoski.
+2. vowels = "aeiou": Definiujemy string z samogłoskami.
+3. count = 0: Inicjalizujemy licznik samogłosek.
+4. for char in word: Pętla for iteruje po każdym znaku w stringu word: "p", "y", "t", "h", "o", "n".
+5. if char in vowels: Sprawdzamy, czy dany znak jest w stringu vowels.
+   - "p" – nie ma w vowels, pomijamy.
+   - "y" – nie ma, pomijamy.
+   - "t" – nie ma, pomijamy.
+   - "h" – nie ma, pomijamy.
+   - "o" – jest w vowels, zwiększamy count (count = 1).
+   - "n" – nie ma, pomijamy.
+6. count = count + 1: Zwiększamy licznik, gdy znajdziemy samogłoskę.
+7. print("Liczba samogłosek w", word, "to:", count): Wyświetlamy wynik. W "python" są 2 samogłoski ("o"), więc wyświetla 2.
+
+Przykład 4: Kodowanie znaków (ASCII) i proste szyfrowanie
+1. char = "a": Ustawiamy znak do przetestowania.
+2. print(ord(char)): Funkcja ord() zwraca kod ASCII znaku "a", czyli 97.
+3. print(chr(97)): Funkcja chr() zamienia kod 97 z powrotem na znak "a".
+4. text = "hello": Ustawiamy string do zaszyfrowania.
+5. encrypted = "": Inicjalizujemy pusty string na zaszyfrowany tekst.
+6. for char in text: Iterujemy po znakach w "hello": "h", "e", "l", "l", "o".
+7. code = ord(char): Pobieramy kod ASCII każdego znaku:
+   - "h" → 104
+   - "e" → 101
+   - "l" → 108
+   - "l" → 108
+   - "o" → 111
+8. encrypted = encrypted + chr(code + 1): Przesuwamy każdy znak o 1 w alfabecie (dodajemy 1 do kodu ASCII):
+   - 104 + 1 = 105 → chr(105) = "i"
+   - 101 + 1 = 102 → chr(102) = "f"
+   - 108 + 1 = 109 → chr(109) = "m"
+   - 108 + 1 = 109 → chr(109) = "m"
+   - 111 + 1 = 112 → chr(112) = "p"
+9. print("Zaszyfrowany tekst:", encrypted): Wyświetlamy wynik: "ifmmp".
+
+Matematyczny kontekst:
+- Kod ASCII przypisuje liczbowe wartości znakom (np. "a" = 97, "b" = 98). Przesunięcie o 1 to prosty szyfr Cezara – każdy znak jest zamieniany na kolejny w alfabecie.
+
+Przykład 5: Konwersja typów z wejścia
+1. number = int(input("Podaj liczbę: ")): Pobieramy dane od użytkownika (np. "10") i konwertujemy na int (10).
+2. result = number * 2: Mnożymy liczbę przez 2. Dla number = 10: result = 10 * 2 = 20.
+3. print("Podwojona liczba to:", result): Wyświetlamy wynik, np. "Podwojona liczba to: 20".

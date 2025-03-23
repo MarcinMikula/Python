@@ -1,0 +1,39 @@
+Wykład 5: Krotki, listy i zmienność
+
+Wykład 5, prowadzony przez profesora Johna Guttaga, wprowadza nowe typy danych w Pythonie: krotki i listy, oraz omawia pojęcie zmienności (mutability). Guttag pokazuje, jak te struktury danych pozwalają na przechowywanie i manipulowanie wieloma wartościami, oraz jak różnią się pod względem zmienności. Kluczowe tematy:
+
+1. Krotki (tuples):
+   - Krotka to niezmienna (immutable) sekwencja wartości, np. (1, 2, 3).
+   - Tworzenie: użycie nawiasów okrągłych, np. t = (1, "hello", 3.14).
+   - Dostęp do elementów: przez indeksy, np. t[0] zwraca 1.
+   - Operacje: konkatenacja (+), powielanie (*), wycinanie (slicing).
+   - Przykład: Zwracanie wielu wartości z funkcji za pomocą krotki.
+
+2. Listy (lists):
+   - Lista to zmienna (mutable) sekwencja wartości, np. [1, 2, 3].
+   - Tworzenie: użycie nawiasów kwadratowych, np. L = [1, "hello", 3.14].
+   - Operacje: dodawanie elementów (append), usuwanie (pop), zmiana elementów przez indeks.
+   - Dostęp do elementów: podobnie jak w krotkach, np. L[0].
+   - Przykład: Iteracja po liście i modyfikacja jej zawartości.
+
+3. Zmienność (mutability):
+   - Krotki i stringi są niezmienne – nie można zmienić ich zawartości po utworzeniu.
+   - Listy są zmienne – można zmieniać, dodawać, usuwać elementy.
+   - Przykład: Próba zmiany elementu w krotce powoduje błąd, ale w liście działa.
+
+4. Matematyczne aspekty:
+   - Listy i krotki jako reprezentacja wektorów lub sekwencji matematycznych.
+   - Przykład: Obliczanie sumy elementów listy (odpowiednik sumy szeregu).
+   - Iteracja po sekwencjach w kontekście problemów matematycznych, np. znajdowanie maksimum.
+
+5. Przykłady praktyczne:
+   - Zwracanie wielu wartości z funkcji za pomocą krotki.
+   - Modyfikacja listy w pętli (np. podwajanie elementów).
+   - Porównanie zachowań krotek i list pod względem zmienności.
+
+6. Kluczowe wnioski:
+   - Krotki są przydatne, gdy dane nie powinny się zmieniać (np. zwracanie wielu wartości).
+   - Listy są bardziej elastyczne, bo można je modyfikować, co jest kluczowe w wielu algorytmach.
+   - Zrozumienie zmienności jest istotne, by uniknąć błędów w programowaniu.
+
+Guttag podkreśla, że krotki i listy to podstawowe struktury danych, które otwierają drogę do bardziej zaawansowanych tematów, takich jak algorytmy i przetwarzanie danych.

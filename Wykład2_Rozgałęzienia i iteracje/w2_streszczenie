@@ -1,0 +1,31 @@
+Wykład 2: Rozgałęzienia i iteracje
+
+Wykład 2, prowadzony przez profesora Erica Grimsona, wprowadza podstawowe mechanizmy sterowania przepływem programu w Pythonie: rozgałęzienia (branching) i iteracje (looping). Te narzędzia pozwalają na tworzenie bardziej dynamicznych programów, które mogą podejmować decyzje i powtarzać operacje. Kluczowe tematy:
+
+1. Rozgałęzienia (branching):
+   - Instrukcje warunkowe: if, elif, else.
+   - Operatory porównania: == (równość), != (różność), <, >, <=, >=.
+   - Operatory logiczne: and, or, not.
+   - Przykład: Sprawdzanie, czy liczba jest dodatnia, ujemna czy równa zero.
+
+2. Iteracje (looping):
+   - Pętla while: wykonuje blok kodu, dopóki warunek jest prawdziwy.
+   - Pętla for: iteruje po sekwencji (np. zakres liczb, string).
+   - Przykład: Sumowanie liczb w danym zakresie.
+
+3. Matematyczne aspekty:
+   - Wprowadzenie do aproksymacji pierwiastka kwadratowego metodą prób i błędów (exhaustive enumeration).
+   - Metoda ta polega na iteracyjnym sprawdzaniu wartości, aż znajdziemy taką, która spełnia warunek (np. x^2 ≈ y).
+   - Omówienie efektywności: metoda jest prosta, ale nieoptymalna (liniowa złożoność O(n)).
+
+4. Przykłady praktyczne:
+   - Sprawdzanie parzystości liczby.
+   - Obliczanie sumy liczb w zakresie.
+   - Aproksymacja pierwiastka kwadratowego: dla y = 25 szukamy x, gdzie x^2 ≈ 25, z krokiem 0.1.
+
+5. Kluczowe wnioski:
+   - Rozgałęzienia pozwalają programowi podejmować decyzje na podstawie warunków.
+   - Iteracje umożliwiają powtarzanie operacji, co jest kluczowe w rozwiązywaniu problemów matematycznych.
+   - Proste algorytmy, jak exhaustive enumeration, są intuicyjne, ale mogą być wolne – w kolejnych wykładach pojawią się lepsze metody (np. wyszukiwanie bisekcyjne).
+
+Grimson podkreśla, że te podstawowe konstrukcje (if, while, for) są fundamentem programowania i pozwalają na rozwiązywanie problemów, które wymagają logiki i iteracji, takich jak proste obliczenia matematyczne.
