@@ -1,0 +1,66 @@
+Wyjaśnienie kodu z Wykładu 22 krok po kroku
+
+Przykład 1: Problem plecakowy 0-1 za pomocą dynamicznego programowania
+1. def knapsack_01(values, weights, capacity): Definiujemy funkcję do rozwiązywania problemu plecakowego.
+2. n = len(values): Ustalamy liczbę przedmiotów.
+3. dp = [[0 for _ in range(capacity + 1)] for _ in range(n + 1)]: Tworzymy tablicę DP o wymiarach (n+1) x (capacity+1).
+   - dp[i][w] to maksymalna wartość dla i pierwszych przedmiotów i pojemności w.
+4. for i in range(1, n + 1): Iterujemy po przedmiotach (od 1 do n).
+5. for w in range(capacity + 1): Iterujemy po pojemnościach (od 0 do capacity).
+6. if weights[i-1] <= w: Jeśli waga przedmiotu i-1 jest mniejsza lub równa dostępnej pojemności:
+7. dp[i][w] = max(dp[i-1][w], dp[i-1][w - weights[i-1]] + values[i-1]): Wybieramy maksimum między:
+   - Nie bierzemy przedmiotu: dp[i-1][w].
+   - Bierzemy przedmiot: dp[i-1][w - weights[i-1]] + values[i-1].
+8. else: Jeśli przedmiot się nie mieści:
+9. dp[i][w] = dp[i-1][w]: Bierzemy wartość bez tego przedmiotu.
+10. return dp[n][capacity]: Zwracamy maksymalną wartość dla wszystkich przedmiotów i pełnej pojemności.
+
+Złożoność:
+- Czasowa: O(n * W), gdzie n to liczba przedmiotów, W to pojemność.
+- Pamięciowa: O(n * W) – tablica DP.
+- Dla n=3, W=50: O(3 * 50) = O(150) operacji.
+
+Przykład 2: Odtwarzanie wybranego podzbioru przedmiotów
+1. def knapsack_01_with_items(values, weights, capacity): Definiujemy funkcję z odtwarzaniem przedmiotów.
+2. n = len(values): Ustalamy liczbę przedmiotów.
+3. dp = [[0 for _ in range(capacity + 1)] for _ in range(n + 1)]: Tworzymy tablicę DP, jak wcześniej.
+4. for i in range(1, n + 1): Wypełniamy tablicę DP, jak w przykładzie 1.
+5. for w in range(capacity + 1): Iterujemy po pojemnościach.
+6. if weights[i-1] <= w: Jeśli przedmiot się mieści:
+7. dp[i][w] = max(dp[i-1][w], dp[i-1][w - weights[i-1]] + values[i-1]): Wybieramy maksimum.
+8. else: Jeśli się nie mieści:
+9. dp[i][w] = dp[i-1][w]: Bierzemy wartość bez przedmiotu.
+10. selected_items = []: Inicjalizujemy listę na wybrane przedmioty.
+11. w = capacity: Zaczynamy od pełnej pojemności.
+12. for i in range(n, 0, -1): Iterujemy wstecz po przedmiotach.
+13. if dp[i][w] != dp[i-1][w]: Jeśli wartości różnią się, oznacza to, że przedmiot i-1 został wybrany.
+14. selected_items.append(i-1): Dodajemy indeks przedmiotu do listy.
+15. w -= weights[i-1]: Zmniejszamy pojemność o wagę wybranego przedmiotu.
+16. return dp[n][capacity], selected_items: Zwracamy maksymalną wartość i listę wybranych przedmiotów.
+
+Złożoność:
+- Taka sama jak w przykładzie 1: O(n * W) czasowa, O(n * W) pamięciowa.
+- Odtwarzanie przedmiotów: O(n) dodatkowe operacje.
+
+Testowanie:
+1. values = [60, 100, 120]: Wartości przedmiotów.
+2. weights = [10, 20, 30]: Wagi przedmiotów.
+3. capacity = 50: Pojemność plecaka.
+4. max_value = knapsack_01(values, weights, capacity): Obliczamy maksymalną wartość:
+   - dp[1][50] (przedmiot 0): max(0, 60) = 60 (dla wagi 10).
+   - dp[2][50] (przedmiot 1): max(60, 100) = 100 (dla wagi 20).
+   - dp[3][50] (przedmiot 2): max(100, 60+120) = 220 (dla wagi 30, bierzemy 0 i 2).
+   - Wynik: 220.
+5. print(f"Maksymalna wartość (bez przedmiotów): {max_value}"): Wyświetlamy: 220.
+6. max_value, items = knapsack_01_with_items(values, weights, capacity): Obliczamy wartość i odtwarzamy przedmioty:
+   - Maksymalna wartość: 220.
+   - Odtwarzanie: dp[3][50] != dp[2][50], więc bierzemy przedmiot 2 (waga 30), w = 50-30 = 20.
+   - dp[2][20] != dp[1][20], więc bierzemy przedmiot 1 (waga 20), w = 20-20 = 0.
+   - dp[1][0] == dp[0][0], więc nie bierzemy przedmiotu 0.
+   - Wybrane przedmioty: [2, 1].
+7. print(f"Maksymalna wartość: {max_value}, Wybrane przedmioty (indeksy): {items}"): Wyświetlamy: 220, [2, 1].
+
+Matematyczny kontekst:
+- Formuła DP: dp[i][w] = max(dp[i-1][w], dp[i-1][w-weight[i]] + value[i]).
+- Dla i=3, w=50: max(100, 60+120) = 220.
+- Wybrane przedmioty (indeksy 1 i 2): waga = 20 + 30 = 50, wartość = 100 + 120 = 220.

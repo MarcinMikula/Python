@@ -1,0 +1,65 @@
+Wyjaśnienie kodu z Wykładu 18 krok po kroku
+
+Przykład 1: Implementacja grafu za pomocą listy sąsiedztwa
+1. class Graph: Definiujemy klasę Graph do reprezentacji grafu.
+2. def __init__(self): Konstruktor klasy Graph.
+3. self.graph = {}: Inicjalizujemy pusty słownik jako listę sąsiedztwa.
+4. def add_edge(self, u, v): Definiujemy metodę do dodawania krawędzi.
+5. if u not in self.graph: Jeśli wierzchołek u nie istnieje, tworzymy dla niego pustą listę.
+6. self.graph[u] = []: Inicjalizujemy listę sąsiadów dla u.
+7. if v not in self.graph: Jeśli wierzchołek v nie istnieje, tworzymy dla niego pustą listę.
+8. self.graph[v] = []: Inicjalizujemy listę sąsiadów dla v.
+9. self.graph[u].append(v): Dodajemy v do listy sąsiadów u.
+10. self.graph[v].append(u): Dodajemy u do listy sąsiadów v (graf nieskierowany).
+11. def display(self): Definiujemy metodę do wyświetlania grafu.
+12. for vertex in self.graph: Iterujemy po wierzchołkach.
+13. print(f"{vertex}: {self.graph[vertex]}"): Wyświetlamy wierzchołek i jego sąsiadów.
+14. g = Graph(): Tworzymy obiekt klasy Graph.
+15. g.add_edge(0, 1): Dodajemy krawędź między 0 a 1.
+16. g.add_edge(0, 2): Dodajemy krawędź między 0 a 2.
+17. g.add_edge(1, 2): Dodajemy krawędź między 1 a 2.
+18. g.add_edge(1, 3): Dodajemy krawędź między 1 a 3.
+19. g.add_edge(2, 3): Dodajemy krawędź między 2 a 3.
+20. g.display(): Wyświetlamy graf:
+    - 0: [1, 2]
+    - 1: [0, 2, 3]
+    - 2: [0, 1, 3]
+    - 3: [1, 2]
+
+Złożoność:
+- Dodawanie krawędzi: O(1) średnio (operacja na słowniku).
+- Wyświetlanie: O(V + E), gdzie V to liczba wierzchołków, E to liczba krawędzi.
+
+Przykład 2: Przeszukiwanie w głąb (DFS)
+1. class Graph: Definiujemy klasę Graph (rozszerzona wersja).
+2. def __init__(self): Konstruktor, jak wcześniej.
+3. def add_edge(self, u, v): Metoda add_edge, jak wcześniej.
+4. def dfs(self, start): Definiujemy metodę DFS do przechodzenia grafu.
+5. visited = set(): Tworzymy zbiór do śledzenia odwiedzonych wierzchołków.
+6. traversal = []: Tworzymy listę do przechowywania kolejności odwiedzin.
+7. self._dfs_recursive(start, visited, traversal): Wywołujemy metodę rekurencyjną.
+8. return traversal: Zwracamy listę odwiedzin.
+9. def _dfs_recursive(self, vertex, visited, traversal): Definiujemy metodę rekurencyjną DFS.
+10. visited.add(vertex): Oznaczamy wierzchołek jako odwiedzony.
+11. traversal.append(vertex): Dodajemy wierzchołek do listy odwiedzin.
+12. for neighbor in self.graph[vertex]: Iterujemy po sąsiadach wierzchołka.
+13. if neighbor not in visited: Jeśli sąsiad nie był odwiedzony:
+14. self._dfs_recursive(neighbor, visited, traversal): Rekurencyjnie odwiedzamy sąsiada.
+15. g = Graph(): Tworzymy obiekt klasy Graph.
+16. g.add_edge(0, 1): Dodajemy krawędź między 0 a 1.
+17. g.add_edge(0, 2): Dodajemy krawędź między 0 a 2.
+18. g.add_edge(1, 2): Dodajemy krawędź między 1 a 2.
+19. g.add_edge(1, 3): Dodajemy krawędź między 1 a 3.
+20. g.add_edge(2, 3): Dodajemy krawędź między 2 a 3.
+21. print("Przechodzenie DFS od wierzchołka 0:", g.dfs(0)): Wykonujemy DFS od wierzchołka 0:
+    - Zaczynamy od 0.
+    - Idziemy do 1 (pierwszy sąsiad 0).
+    - Od 1 idziemy do 2 (pomijamy 0, bo odwiedzony).
+    - Od 2 idziemy do 3 (pomijamy 0 i 1, bo odwiedzeni).
+    - Od 3 wracamy (2 i 1 odwiedzeni).
+    - Wracamy do 0, ale wszyscy sąsiedzi odwiedzeni.
+    - Wynik: [0, 1, 2, 3].
+
+Złożoność:
+- DFS: O(V + E), gdzie V to liczba wierzchołków, E to liczba krawędzi.
+- Tutaj: V = 4, E = 5, więc O(9) operacji.

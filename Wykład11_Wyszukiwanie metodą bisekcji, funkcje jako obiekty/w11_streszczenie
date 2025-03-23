@@ -1,0 +1,30 @@
+Wykład 11: Wyszukiwanie metodą bisekcji, funkcje jako obiekty
+
+Wykład 11, prowadzony przez profesora Johna Guttaga, koncentruje się na metodzie bisekcji jako efektywnej technice wyszukiwania oraz na bardziej zaawansowanym wykorzystaniu funkcji jako obiektów. Guttag pokazuje, jak bisekcja może być użyta do rozwiązywania problemów numerycznych, takich jak znajdowanie pierwiastków równań, oraz jak funkcje mogą być przekazywane jako argumenty do innych funkcji. Kluczowe tematy:
+
+1. Wyszukiwanie metodą bisekcji:
+   - Metoda bisekcji to algorytm numeryczny do znajdowania pierwiastków równań, np. x^2 = y.
+   - Działa na przedziale [a, b], gdzie funkcja zmienia znak (f(a) * f(b) < 0), i dzieli przedział na pół w każdej iteracji.
+   - Złożoność: O(log n), gdzie n to wielkość przedziału podzielona przez dokładność (epsilon).
+   - Przykład: Znajdowanie pierwiastka kwadratowego z 25.
+
+2. Funkcje jako obiekty (powtórzenie i rozwinięcie):
+   - Funkcje w Pythonie mogą być przekazywane jako argumenty, przypisywane do zmiennych i zwracane z innych funkcji.
+   - Przykład: Przekazywanie funkcji do metody bisekcji, by rozwiązywać różne równania (np. x^2 - y = 0).
+
+3. Matematyczne aspekty:
+   - Bisekcja: Logarytmiczne zmniejszanie przedziału – liczba iteracji to log_2((b-a)/epsilon).
+   - Przykład: Dla przedziału [0, 25], epsilon = 0.01, potrzeba log_2(25/0.01) ≈ 11 iteracji.
+   - Funkcje jako obiekty: Odpowiednik matematycznego składania funkcji (f(g(x))).
+
+4. Przykłady praktyczne:
+   - Implementacja metody bisekcji do znajdowania pierwiastka kwadratowego.
+   - Użycie bisekcji do rozwiązywania ogólnych równań przez przekazanie funkcji jako argumentu.
+   - Prosty przykład przekazywania funkcji do innej funkcji.
+
+5. Kluczowe wnioski:
+   - Metoda bisekcji jest znacznie szybsza niż metoda prób i błędów (O(log n) vs O(n)).
+   - Przekazywanie funkcji jako argumentów pozwala na elastyczne i ogólne rozwiązania problemów.
+   - Zrozumienie tych technik otwiera drogę do rozwiązywania bardziej złożonych problemów numerycznych.
+
+Guttag podkreśla, że bisekcja to potężne narzędzie w obliczeniach numerycznych, a traktowanie funkcji jako obiektów zwiększa modularność i elastyczność kodu.

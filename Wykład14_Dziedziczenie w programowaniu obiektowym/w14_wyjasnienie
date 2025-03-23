@@ -1,0 +1,64 @@
+Wyjaśnienie kodu z Wykładu 14 krok po kroku
+
+Przykład 1: Dziedziczenie – klasa Animal i klasy pochodne
+1. class Animal: Definiujemy klasę bazową Animal.
+2. def __init__(self, name): Konstruktor klasy Animal, przyjmuje nazwę.
+3. self.name = name: Ustawiamy atrybut name.
+4. def speak(self): Definiujemy metodę speak w klasie bazowej.
+5. return "Nie wiem, co powiedzieć!": Domyślna implementacja.
+6. class Dog(Animal): Definiujemy klasę Dog, która dziedziczy po Animal.
+7. def speak(self): Nadpisujemy metodę speak dla klasy Dog.
+8. return f"{self.name} mówi: Hau hau!": Zwracamy dźwięk psa.
+9. class Cat(Animal): Definiujemy klasę Cat, która dziedziczy po Animal.
+10. def speak(self): Nadpisujemy metodę speak dla klasy Cat.
+11. return f"{self.name} mówi: Miau miau!": Zwracamy dźwięk kota.
+12. dog = Dog("Reksio"): Tworzymy obiekt klasy Dog.
+13. cat = Cat("Mruczek"): Tworzymy obiekt klasy Cat.
+14. print(dog.speak()): Wywołujemy metodę speak dla psa – wyświetla "Reksio mówi: Hau hau!".
+15. print(cat.speak()): Wywołujemy metodę speak dla kota – wyświetla "Mruczek mówi: Miau miau!".
+
+Przykład 2: Klasa Person i Student z użyciem super()
+1. class Person: Definiujemy klasę bazową Person.
+2. def __init__(self, name, age): Konstruktor klasy Person, przyjmuje imię i wiek.
+3. self.name = name: Ustawiamy atrybut name.
+4. self.age = age: Ustawiamy atrybut age.
+5. def introduce(self): Definiujemy metodę introduce w klasie bazowej.
+6. return f"Jestem {self.name}, mam {self.age} lat.": Zwracamy opis osoby.
+7. class Student(Person): Definiujemy klasę Student, która dziedziczy po Person.
+8. def __init__(self, name, age, student_id): Konstruktor klasy Student.
+9. super().__init__(name, age): Wywołujemy konstruktor klasy bazowej, by zainicjalizować name i age.
+10. self.student_id = student_id: Ustawiamy dodatkowy atrybut student_id.
+11. def introduce(self): Nadpisujemy metodę introduce.
+12. return f"Jestem {self.name}, mam {self.age} lat, mój numer studenta to {self.student_id}.": Zwracamy rozszerzony opis.
+13. person = Person("Jan", 30): Tworzymy obiekt klasy Person.
+14. student = Student("Anna", 20, "12345"): Tworzymy obiekt klasy Student.
+15. print(person.introduce()): Wyświetlamy opis osoby – "Jestem Jan, mam 30 lat.".
+16. print(student.introduce()): Wyświetlamy opis studenta – "Jestem Anna, mam 20 lat, mój numer studenta to 12345.".
+
+Przykład 3: Figury geometryczne – obliczanie pola
+1. class Shape: Definiujemy klasę bazową Shape.
+2. def area(self): Definiujemy metodę area w klasie bazowej.
+3. return 0: Domyślna implementacja – do nadpisywania.
+4. class Circle(Shape): Definiujemy klasę Circle, która dziedziczy po Shape.
+5. def __init__(self, radius): Konstruktor klasy Circle.
+6. self.radius = radius: Ustawiamy atrybut radius.
+7. def area(self): Nadpisujemy metodę area.
+8. return 3.14 * self.radius ** 2: Obliczamy pole koła: π * r^2.
+9. class Rectangle(Shape): Definiujemy klasę Rectangle, która dziedziczy po Shape.
+10. def __init__(self, width, height): Konstruktor klasy Rectangle.
+11. self.width = width: Ustawiamy atrybut width.
+12. self.height = height: Ustawiamy atrybut height.
+13. def area(self): Nadpisujemy metodę area.
+14. return self.width * self.height: Obliczamy pole prostokąta: width * height.
+15. circle = Circle(5): Tworzymy obiekt klasy Circle o promieniu 5.
+16. rectangle = Rectangle(4, 6): Tworzymy obiekt klasy Rectangle o wymiarach 4x6.
+17. print("Pole koła:", circle.area()): Obliczamy pole koła:
+    - 3.14 * 5^2 = 3.14 * 25 = 78.5
+    - Wyświetla 78.5.
+18. print("Pole prostokąta:", rectangle.area()): Obliczamy pole prostokąta:
+    - 4 * 6 = 24
+    - Wyświetla 24.
+
+Matematyczny kontekst:
+- Pole koła: π * r^2. Dla r = 5: 3.14 * 25 = 78.5.
+- Pole prostokąta: width * height. Dla 4x6: 4 * 6 = 24.

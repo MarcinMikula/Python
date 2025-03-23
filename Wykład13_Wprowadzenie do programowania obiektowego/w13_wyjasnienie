@@ -1,0 +1,61 @@
+Wyjaśnienie kodu z Wykładu 13 krok po kroku
+
+Przykład 1: Definiowanie klasy Point
+1. class Point: Definiujemy klasę Point.
+2. def __init__(self, x, y): Definiujemy konstruktor, który inicjalizuje obiekt.
+3. self.x = x: Ustawiamy atrybut x na podaną wartość.
+4. self.y = y: Ustawiamy atrybut y na podaną wartość.
+5. def get_x(self): Definiujemy metodę do pobierania wartości x.
+6. return self.x: Zwracamy atrybut x.
+7. def get_y(self): Definiujemy metodę do pobierania wartości y.
+8. return self.y: Zwracamy atrybut y.
+9. def distance_from_origin(self): Definiujemy metodę do obliczania odległości od (0,0).
+10. return (self.x ** 2 + self.y ** 2) ** 0.5: Obliczamy odległość euklidesową: sqrt(x^2 + y^2).
+11. p1 = Point(3, 4): Tworzymy obiekt p1 z x=3, y=4.
+12. print("Punkt p1:", p1.get_x(), p1.get_y()): Wyświetlamy współrzędne: 3, 4.
+13. print("Odległość p1 od (0,0):", p1.distance_from_origin()): Obliczamy odległość:
+    - (3^2 + 4^2)^0.5 = (9 + 16)^0.5 = 25^0.5 = 5.0
+    - Wyświetla 5.0.
+
+Matematyczny kontekst:
+- Odległość euklidesowa od (0,0) to sqrt(x^2 + y^2). Dla (3,4): sqrt(3^2 + 4^2) = 5.
+
+Przykład 2: Metoda do obliczania odległości między punktami
+1. class Point: Definiujemy klasę Point (rozszerzona wersja).
+2. def __init__(self, x, y): Konstruktor, jak wcześniej.
+3. self.x = x: Ustawiamy x.
+4. self.y = y: Ustawiamy y.
+5. def get_x(self): Metoda get_x, jak wcześniej.
+6. def get_y(self): Metoda get_y, jak wcześniej.
+7. def distance_from_origin(self): Metoda distance_from_origin, jak wcześniej.
+8. def distance_to(self, other_point): Definiujemy metodę do obliczania odległości do innego punktu.
+9. dx = self.x - other_point.x: Obliczamy różnicę współrzędnych x.
+10. dy = self.y - other_point.y: Obliczamy różnicę współrzędnych y.
+11. return (dx ** 2 + dy ** 2) ** 0.5: Obliczamy odległość euklidesową: sqrt((x2-x1)^2 + (y2-y1)^2).
+12. p1 = Point(3, 4): Tworzymy punkt p1 (3,4).
+13. p2 = Point(0, 0): Tworzymy punkt p2 (0,0).
+14. print("Odległość między p1 a p2:", p1.distance_to(p2)): Obliczamy odległość:
+    - dx = 3 - 0 = 3
+    - dy = 4 - 0 = 4
+    - (3^2 + 4^2)^0.5 = (9 + 16)^0.5 = 25^0.5 = 5.0
+    - Wyświetla 5.0.
+
+Matematyczny kontekst:
+- Odległość między punktami (x1,y1) i (x2,y2) to sqrt((x2-x1)^2 + (y2-y1)^2). Dla (3,4) i (0,0): 5.0.
+
+Przykład 3: Przesunięcie punktu
+1. class Point: Definiujemy klasę Point (rozszerzona wersja).
+2. def __init__(self, x, y): Konstruktor, jak wcześniej.
+3. self.x = x: Ustawiamy x.
+4. self.y = y: Ustawiamy y.
+5. def get_x(self): Metoda get_x, jak wcześniej.
+6. def get_y(self): Metoda get_y, jak wcześniej.
+7. def move(self, dx, dy): Definiujemy metodę do przesunięcia punktu.
+8. self.x += dx: Zwiększamy x o dx.
+9. self.y += dy: Zwiększamy y o dy.
+10. p = Point(1, 2): Tworzymy punkt p (1,2).
+11. print("Przed przesunięciem:", p.get_x(), p.get_y()): Wyświetlamy współrzędne: 1, 2.
+12. p.move(2, 3): Przesuwamy punkt o dx=2, dy=3:
+    - x = 1 + 2 = 3
+    - y = 2 + 3 = 5
+13. print("Po przesunięciu:", p.get_x(), p.get_y()): Wyświetlamy nowe współrzędne: 3, 5.

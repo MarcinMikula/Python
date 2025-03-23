@@ -1,0 +1,67 @@
+Wyjaśnienie kodu z Wykładu 12 krok po kroku
+
+Przykład 1: Prosta tablica haszująca z łańcuchowaniem
+1. class HashTable: Definiujemy klasę HashTable do implementacji tablicy haszującej.
+2. def __init__(self, size): Inicjalizujemy tablicę o zadanym rozmiarze.
+3. self.size = size: Zapisujemy rozmiar tablicy.
+4. self.table = [[] for _ in range(size)]: Tworzymy listę list – każda pozycja w tablicy to pusta lista (łańcuchowanie).
+5. def hash_function(self, key): Definiujemy funkcję haszującą.
+6. return hash(key) % self.size: Obliczamy indeks jako reszta z dzielenia wyniku hash(key) przez rozmiar tablicy.
+7. def insert(self, key, value): Definiujemy metodę do wstawiania par klucz-wartość.
+8. index = self.hash_function(key): Obliczamy indeks dla klucza.
+9. for item in self.table[index]: Sprawdzamy, czy klucz już istnieje w liście na danym indeksie.
+10. if item[0] == key: Jeśli klucz istnieje, aktualizujemy wartość.
+11. item[1] = value: Aktualizujemy wartość.
+12. return: Kończymy metodę.
+13. self.table[index].append([key, value]): Jeśli klucza nie ma, dodajemy nową parę do listy.
+14. def search(self, key): Definiujemy metodę do wyszukiwania wartości dla klucza.
+15. index = self.hash_function(key): Obliczamy indeks.
+16. for item in self.table[index]: Przeszukujemy listę na danym indeksie.
+17. if item[0] == key: Jeśli znajdziemy klucz, zwracamy jego wartość.
+18. return item[1]: Zwracamy wartość.
+19. return None: Jeśli klucza nie ma, zwracamy None.
+20. ht = HashTable(5): Tworzymy tablicę haszującą o rozmiarze 5.
+21. ht.insert("apple", 10): Wstawiamy parę "apple": 10.
+22. ht.insert("banana", 20): Wstawiamy parę "banana": 20.
+23. ht.insert("orange", 30): Wstawiamy parę "orange": 30.
+24. print("Wartość dla 'apple':", ht.search("apple")): Wyszukujemy "apple" – wyświetla 10.
+25. print("Wartość dla 'banana':", ht.search("banana")): Wyszukujemy "banana" – wyświetla 20.
+26. print("Wartość dla 'grape':", ht.search("grape")): Wyszukujemy "grape" – wyświetla None.
+
+Złożoność:
+- Średnio O(1) dla wstawiania i wyszukiwania, jeśli kolizje są rzadkie.
+- W najgorszym przypadku (wiele kolizji) O(n), gdzie n to liczba elementów.
+
+Przykład 2: Użycie słownika do zliczania wystąpień
+1. text = "hello world hello python": Ustawiamy string do analizy.
+2. word_count = {}: Tworzymy pusty słownik.
+3. for word in text.split(): Iterujemy po słowach w tekście (split() dzieli string na listę słów).
+4. if word in word_count: Sprawdzamy, czy słowo jest już w słowniku.
+5. word_count[word] += 1: Jeśli tak, zwiększamy licznik.
+6. else: Jeśli nie, dodajemy słowo z licznikiem 1.
+7. word_count[word] = 1: Ustawiamy początkową wartość.
+    - "hello": 1 (potem 2)
+    - "world": 1
+    - "python": 1
+8. print("Wystąpienia słów:", word_count): Wyświetlamy wynik: {'hello': 2, 'world': 1, 'python': 1}.
+
+Złożoność:
+- Wyszukiwanie i wstawianie w słowniku: średnio O(1).
+- Cała pętla: O(n), gdzie n to liczba słów.
+
+Przykład 3: Porównanie wyszukiwania (konceptualne)
+1. def linear_search(lst, key): Definiujemy funkcję wyszukiwania liniowego w liście par klucz-wartość.
+2. for i in range(len(lst)): Iterujemy po liście.
+3. if lst[i][0] == key: Jeśli klucz pasuje, zwracamy wartość.
+4. return lst[i][1]: Zwracamy wartość.
+5. return None: Jeśli klucza nie ma, zwracamy None.
+6. data = [["apple", 10], ["banana", 20], ["orange", 30]]: Tworzymy listę par.
+7. print("Wyszukiwanie liniowe - 'banana':", linear_search(data, "banana")): Wyszukujemy "banana" – wyświetla 20.
+    - Sprawdzamy: "apple" (nie), "banana" (tak) – 2 kroki.
+8. data_dict = {"apple": 10, "banana": 20, "orange": 30}: Tworzymy słownik.
+9. print("Wyszukiwanie w słowniku - 'banana':", data_dict["banana"]): Wyszukujemy "banana" – wyświetla 20.
+    - Słownik: O(1) – bezpośredni dostęp.
+
+Złożoność:
+- Wyszukiwanie liniowe: O(n), gdzie n to długość listy.
+- Wyszukiwanie w słowniku: średnio O(1).

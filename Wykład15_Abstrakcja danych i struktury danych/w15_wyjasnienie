@@ -1,0 +1,70 @@
+Wyjaśnienie kodu z Wykładu 15 krok po kroku
+
+Przykład 1: Implementacja klasy Stack (stosu)
+1. class Stack: Definiujemy klasę Stack.
+2. def __init__(self): Konstruktor klasy Stack.
+3. self.items = []: Inicjalizujemy pustą listę do przechowywania elementów.
+4. def push(self, item): Definiujemy metodę push do dodawania elementów.
+5. self.items.append(item): Dodajemy element na koniec listy (góra stosu).
+6. def pop(self): Definiujemy metodę pop do usuwania elementów.
+7. if not self.is_empty(): Sprawdzamy, czy stos nie jest pusty.
+8. return self.items.pop(): Usuwamy i zwracamy ostatni element (z końca listy).
+9. return None: Jeśli stos jest pusty, zwracamy None.
+10. def is_empty(self): Definiujemy metodę do sprawdzania, czy stos jest pusty.
+11. return len(self.items) == 0: Zwracamy True, jeśli lista jest pusta.
+12. stack = Stack(): Tworzymy obiekt klasy Stack.
+13. stack.push(1): Dodajemy 1 na stos.
+14. stack.push(2): Dodajemy 2 na stos.
+15. stack.push(3): Dodajemy 3 na stos.
+16. print("Stos po dodaniu:", stack.items): Wyświetlamy stos: [1, 2, 3].
+17. print("Pop:", stack.pop()): Usuwamy i wyświetlamy ostatni element: 3.
+18. print("Stos po pop:", stack.items): Wyświetlamy stos po usunięciu: [1, 2].
+
+Złożoność:
+- push: O(1) – dodawanie na koniec listy.
+- pop: O(1) – usuwanie z końca listy.
+
+Przykład 2: Implementacja klasy Queue (kolejki)
+1. class Queue: Definiujemy klasę Queue.
+2. def __init__(self): Konstruktor klasy Queue.
+3. self.items = []: Inicjalizujemy pustą listę do przechowywania elementów.
+4. def enqueue(self, item): Definiujemy metodę enqueue do dodawania elementów.
+5. self.items.append(item): Dodajemy element na koniec listy (koniec kolejki).
+6. def dequeue(self): Definiujemy metodę dequeue do usuwania elementów.
+7. if not self.is_empty(): Sprawdzamy, czy kolejka nie jest pusta.
+8. return self.items.pop(0): Usuwamy i zwracamy pierwszy element (z początku listy).
+9. return None: Jeśli kolejka jest pusta, zwracamy None.
+10. def is_empty(self): Definiujemy metodę do sprawdzania, czy kolejka jest pusta.
+11. return len(self.items) == 0: Zwracamy True, jeśli lista jest pusta.
+12. queue = Queue(): Tworzymy obiekt klasy Queue.
+13. queue.enqueue("A"): Dodajemy "A" do kolejki.
+14. queue.enqueue("B"): Dodajemy "B" do kolejki.
+15. queue.enqueue("C"): Dodajemy "C" do kolejki.
+16. print("Kolejka po dodaniu:", queue.items): Wyświetlamy kolejkę: ['A', 'B', 'C'].
+17. print("Dequeue:", queue.dequeue()): Usuwamy i wyświetlamy pierwszy element: "A".
+18. print("Kolejka po dequeue:", queue.items): Wyświetlamy kolejkę po usunięciu: ['B', 'C'].
+
+Złożoność:
+- enqueue: O(1) – dodawanie na koniec listy.
+- dequeue: O(n) – usuwanie z początku listy (przesunięcie elementów). W praktyce można użyć deque z collections dla O(1).
+
+Przykład 3: Użycie stosu do odwracania listy
+1. def reverse_list(lst): Definiujemy funkcję do odwracania listy za pomocą stosu.
+2. stack = Stack(): Tworzymy nowy stos.
+3. for item in lst: Iterujemy po elementach listy.
+4. stack.push(item): Dodajemy każdy element na stos.
+5. reversed_list = []: Tworzymy pustą listę na wynik.
+6. while not stack.is_empty(): Dopóki stos nie jest pusty:
+7. reversed_list.append(stack.pop()): Usuwamy element ze stosu i dodajemy do wyniku.
+8. return reversed_list: Zwracamy odwróconą listę.
+9. lst = [1, 2, 3, 4, 5]: Tworzymy listę do odwrócenia.
+10. reversed_lst = reverse_list(lst): Wywołujemy funkcję:
+    - Dodajemy na stos: 1, 2, 3, 4, 5.
+    - Zdejmujemy ze stosu: 5, 4, 3, 2, 1.
+    - Wynik: [5, 4, 3, 2, 1].
+11. print("Oryginalna lista:", lst): Wyświetlamy oryginalną listę: [1, 2, 3, 4, 5].
+12. print("Odwrócona lista:", reversed_lst): Wyświetlamy odwróconą listę: [5, 4, 3, 2, 1].
+
+Złożoność:
+- Dodawanie i usuwanie ze stosu: O(1) na operację.
+- Cała operacja: O(n), gdzie n to długość listy.

@@ -1,0 +1,30 @@
+Wykład 22: Dynamiczne programowanie – problem plecakowy
+
+Wykład 22, prowadzony przez profesora Johna Guttaga, kontynuuje temat dynamicznego programowania (DP), skupiając się na problemie plecakowym (knapsack problem). Guttag omawia, jak DP może być użyte do rozwiązywania problemów optymalizacyjnych, gdzie musimy dokonać wyboru spośród wielu opcji. Kluczowe tematy:
+
+1. Problem plecakowy (Knapsack Problem):
+   - Mamy zbiór przedmiotów, każdy z wagą (weight) i wartością (value), oraz plecak o ograniczonej pojemności (capacity).
+   - Cel: Wybrać podzbiór przedmiotów, który maksymalizuje wartość, nie przekraczając pojemności plecaka.
+   - Wersja 0-1: Każdy przedmiot można wziąć lub pominąć (nie można brać ułamków).
+
+2. Dynamiczne programowanie w problemie plecakowym:
+   - DP pozwala rozwiązać problem przez budowanie tablicy, gdzie każdy element reprezentuje maksymalną wartość dla danej pojemności i podzbioru przedmiotów.
+   - Podejście bottom-up: Używamy tablicy 2D do przechowywania wyników podproblemów.
+   - Formuła: dp[i][w] = max(dp[i-1][w], dp[i-1][w-weight[i]] + value[i]), gdzie i to indeks przedmiotu, w to dostępna pojemność.
+
+3. Matematyczne aspekty:
+   - Złożoność czasowa: O(n * W), gdzie n to liczba przedmiotów, W to pojemność plecaka.
+   - Złożoność pamięciowa: O(n * W) dla tablicy DP.
+   - Problem plecakowy jest NP-trudny, ale DP daje rozwiązanie pseudowielomianowe (złożoność zależy od W, a nie od wartości logarytmicznej W).
+
+4. Przykłady praktyczne:
+   - Implementacja problemu plecakowego 0-1 za pomocą DP.
+   - Testowanie na prostym zestawie przedmiotów.
+   - Odtwarzanie wybranego podzbioru przedmiotów (nie tylko maksymalnej wartości).
+
+5. Kluczowe wnioski:
+   - Problem plecakowy to klasyczny przykład problemu optymalizacyjnego, który można efektywnie rozwiązać za pomocą DP.
+   - DP pozwala na systematyczne podejście do problemów, gdzie musimy dokonywać wyborów i optymalizować wynik.
+   - Problem plecakowy ma szerokie zastosowanie, np. w zarządzaniu zasobami, planowaniu czy kryptografii.
+
+Guttag podkreśla, że dynamiczne programowanie to potężne narzędzie do rozwiązywania problemów optymalizacyjnych, a problem plecakowy jest doskonałym przykładem jego praktycznego zastosowania.

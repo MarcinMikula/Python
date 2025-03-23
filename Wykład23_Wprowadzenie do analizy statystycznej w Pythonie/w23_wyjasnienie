@@ -1,0 +1,51 @@
+Wyjaśnienie kodu z Wykładu 23 krok po kroku
+
+Przykład 1: Obliczanie średniej i odchylenia standardowego
+1. import math: Importujemy moduł math do obliczania pierwiastka kwadratowego.
+2. def mean(data): Definiujemy funkcję do obliczania średniej.
+3. return sum(data) / len(data): Obliczamy średnią: suma elementów podzielona przez ich liczbę.
+   - Dla data=[1, 2, 3, 4, 5]: (1+2+3+4+5)/5 = 15/5 = 3.0.
+4. def std_dev(data): Definiujemy funkcję do obliczania odchylenia standardowego.
+5. mu = mean(data): Obliczamy średnią danych.
+6. n = len(data): Ustalamy liczbę elementów.
+7. variance = sum((x - mu) ** 2 for x in data) / n: Obliczamy wariancję:
+   - Dla każdego x obliczamy (x - μ)^2, sumujemy i dzielimy przez n.
+   - Dla data=[1, 2, 3, 4, 5], μ=3: (1-3)^2 + (2-3)^2 + (3-3)^2 + (4-3)^2 + (5-3)^2 = 4 + 1 + 0 + 1 + 4 = 10.
+   - Wariancja = 10/5 = 2.
+8. return math.sqrt(variance): Zwracamy odchylenie standardowe: √(wariancja).
+   - √2 ≈ 1.41.
+9. data = [1, 2, 3, 4, 5]: Tworzymy prosty zbiór danych.
+10. print(f"Dane: {data}"): Wyświetlamy dane: [1, 2, 3, 4, 5].
+11. print(f"Średnia: {mean(data)}"): Wyświetlamy średnią: 3.0.
+12. print(f"Odchylenie standardowe: {std_dev(data):.2f}"): Wyświetlamy odchylenie standardowe: 1.41.
+
+Złożoność:
+- Średnia: O(n) – jedna pętla po danych.
+- Odchylenie standardowe: O(n) – dwie pętle (jedna w mean, jedna w std_dev).
+- Dla n=5: O(5) operacji.
+
+Przykład 2: Generowanie danych z rozkładem normalnym
+1. import random: Importujemy moduł random do generowania losowych danych.
+2. def generate_normal_data(mu, sigma, n): Definiujemy funkcję do generowania danych z rozkładem normalnym.
+3. return [random.gauss(mu, sigma) for _ in range(n)]: Generujemy n próbek z rozkładem normalnym o średniej mu i odchyleniu sigma.
+   - random.gauss(mu, sigma) generuje liczby z rozkładu normalnego.
+4. mu = 0: Ustawiamy średnią rozkładu na 0.
+5. sigma = 1: Ustawiamy odchylenie standardowe na 1.
+6. n = 1000: Ustawiamy liczbę próbek na 1000.
+7. normal_data = generate_normal_data(mu, sigma, n): Generujemy 1000 próbek.
+8. print(f"\nWygenerowane dane (pierwsze 5): {normal_data[:5]}"): Wyświetlamy pierwsze 5 próbek (losowe wartości).
+9. print(f"Średnia wygenerowanych danych: {mean(normal_data):.2f}"): Obliczamy i wyświetlamy średnią:
+   - Dla 1000 próbek z rozkładem N(0,1), średnia powinna być bliska 0.
+10. print(f"Odchylenie standardowe wygenerowanych danych: {std_dev(normal_data):.2f}"): Obliczamy i wyświetlamy odchylenie standardowe:
+    - Dla 1000 próbek z rozkładem N(0,1), odchylenie standardowe powinno być bliskie 1.
+
+Złożoność:
+- Generowanie danych: O(n) – generujemy n próbek.
+- Obliczanie średniej i odchylenia: O(n).
+- Dla n=1000: O(1000) operacji.
+
+Matematyczny kontekst:
+- Średnia: μ = (Σx_i)/n. Dla data=[1, 2, 3, 4, 5]: 3.0.
+- Wariancja: σ^2 = (Σ(x_i - μ)^2)/n. Dla data=[1, 2, 3, 4, 5]: 2.0.
+- Odchylenie standardowe: σ = √(σ^2). Dla data=[1, 2, 3, 4, 5]: √2 ≈ 1.41.
+- Rozkład normalny: Wygenerowane dane mają rozkład N(0,1), więc średnia ≈ 0, odchylenie ≈ 1.

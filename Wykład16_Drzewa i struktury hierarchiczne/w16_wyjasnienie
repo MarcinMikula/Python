@@ -1,0 +1,75 @@
+Wyjaśnienie kodu z Wykładu 16 krok po kroku
+
+Przykład 1: Implementacja drzewa binarnego
+1. class Node: Definiujemy klasę Node reprezentującą węzeł drzewa.
+2. def __init__(self, value): Konstruktor węzła.
+3. self.value = value: Ustawiamy wartość węzła.
+4. self.left = None: Inicjalizujemy lewe dziecko jako None.
+5. self.right = None: Inicjalizujemy prawe dziecko jako None.
+6. class BinaryTree: Definiujemy klasę BinaryTree do zarządzania drzewem.
+7. def __init__(self): Konstruktor drzewa.
+8. self.root = None: Inicjalizujemy korzeń jako None.
+9. def insert(self, value): Definiujemy metodę insert do wstawiania wartości.
+10. if self.root is None: Jeśli drzewo jest puste, tworzymy korzeń.
+11. self.root = Node(value): Ustawiamy korzeń na nowy węzeł.
+12. else: Jeśli korzeń istnieje, wstawiamy rekurencyjnie.
+13. self._insert_recursive(self.root, value): Wywołujemy metodę pomocniczą.
+14. def _insert_recursive(self, node, value): Definiujemy metodę rekurencyjną do wstawiania.
+15. if value < node.value: Jeśli wartość jest mniejsza od wartości węzła, idziemy w lewo.
+16. if node.left is None: Jeśli lewe dziecko nie istnieje, tworzymy nowy węzeł.
+17. node.left = Node(value): Ustawiamy lewe dziecko.
+18. else: Jeśli lewe dziecko istnieje, rekurencyjnie wstawiamy w lewym poddrzewie.
+19. self._insert_recursive(node.left, value): Rekurencja.
+20. else: Jeśli wartość jest większa lub równa, idziemy w prawo.
+21. if node.right is None: Jeśli prawe dziecko nie istnieje, tworzymy nowy węzeł.
+22. node.right = Node(value): Ustawiamy prawe dziecko.
+23. else: Jeśli prawe dziecko istnieje, rekurencyjnie wstawiamy w prawym poddrzewie.
+24. self._insert_recursive(node.right, value): Rekurencja.
+25. def inorder_traversal(self): Definiujemy metodę do przechodzenia drzewa w porządku inorder.
+26. result = []: Tworzymy listę na wyniki.
+27. self._inorder_recursive(self.root, result): Wywołujemy metodę pomocniczą.
+28. return result: Zwracamy listę posortowanych wartości.
+29. def _inorder_recursive(self, node, result): Definiujemy metodę rekurencyjną do przechodzenia inorder.
+30. if node is not None: Jeśli węzeł istnieje:
+31. self._inorder_recursive(node.left, result): Przechodzimy lewe poddrzewo.
+32. result.append(node.value): Dodajemy wartość bieżącego węzła.
+33. self._inorder_recursive(node.right, result): Przechodzimy prawe poddrzewo.
+34. tree = BinaryTree(): Tworzymy obiekt klasy BinaryTree.
+35. values = [5, 3, 7, 1, 4, 6, 8]: Lista wartości do wstawienia.
+36. for value in values: Wstawiamy każdą wartość do drzewa.
+37. tree.insert(value): Wstawiamy wartości, tworząc drzewo:
+    - 5 (korzeń)
+    - 3 (lewe dziecko 5)
+    - 7 (prawe dziecko 5)
+    - 1 (lewe dziecko 3)
+    - 4 (prawe dziecko 3)
+    - 6 (lewe dziecko 7)
+    - 8 (prawe dziecko 7)
+38. print("Przechodzenie inorder:", tree.inorder_traversal()): Wyświetlamy wartości w porządku inorder:
+    - Inorder: lewe → korzeń → prawe: [1, 3, 4, 5, 6, 7, 8].
+
+Złożoność:
+- Wstawianie: O(h), gdzie h to wysokość drzewa. Dla zrównoważonego drzewa O(log n).
+- Przechodzenie inorder: O(n), gdzie n to liczba węzłów.
+
+Przykład 2: Proste drzewo binarne z ręcznym budowaniem
+1. root = Node(1): Tworzymy korzeń drzewa o wartości 1.
+2. root.left = Node(2): Tworzymy lewe dziecko korzenia o wartości 2.
+3. root.right = Node(3): Tworzymy prawe dziecko korzenia o wartości 3.
+4. root.left.left = Node(4): Tworzymy lewe dziecko węzła 2 o wartości 4.
+5. root.left.right = Node(5): Tworzymy prawe dziecko węzła 2 o wartości 5.
+6. def inorder(node): Definiujemy funkcję do przechodzenia drzewa w porządku inorder.
+7. if node is not None: Jeśli węzeł istnieje:
+8. inorder(node.left): Przechodzimy lewe poddrzewo.
+9. print(node.value, end=" "): Wyświetlamy wartość bieżącego węzła.
+10. inorder(node.right): Przechodzimy prawe poddrzewo.
+11. print("Ręczne drzewo – inorder:", end=" "): Wyświetlamy etykietę.
+12. inorder(root): Wywołujemy przechodzenie:
+    - Zaczynamy od korzenia (1).
+    - Lewe poddrzewo: 2 → 4 (lewe), 2 (korzeń), 5 (prawe).
+    - Korzeń: 1.
+    - Prawe poddrzewo: 3.
+    - Wynik: 4 2 5 1 3.
+
+Złożoność:
+- Przechodzenie inorder: O(n), gdzie n to liczba węzłów (tutaj 5).

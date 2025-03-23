@@ -1,0 +1,30 @@
+Wykład 19: Przeszukiwanie grafów – BFS i najkrótsza ścieżka
+
+Wykład 19, prowadzony przez profesora Johna Guttaga, kontynuuje temat grafów, wprowadzając przeszukiwanie wszerz (Breadth-First Search, BFS) oraz jego zastosowanie do znajdowania najkrótszej ścieżki w grafie nieważonym. Guttag omawia różnice między BFS a DFS oraz pokazuje, jak BFS może być używany w praktycznych problemach. Kluczowe tematy:
+
+1. Przeszukiwanie wszerz (BFS):
+   - BFS eksploruje graf poziomami, zaczynając od wierzchołka startowego i odwiedzając wszystkich sąsiadów, zanim przejdzie do kolejnego poziomu.
+   - Złożoność: O(V + E), gdzie V to liczba wierzchołków, a E to liczba krawędzi.
+   - Zastosowanie: Znajdowanie najkrótszej ścieżki w grafie nieważonym.
+
+2. Najkrótsza ścieżka w grafie nieważonym:
+   - BFS gwarantuje najkrótszą ścieżkę (w sensie liczby krawędzi) w grafie nieważonym.
+   - Algorytm: Podczas przechodzenia BFS zapisujemy poprzedników (parents) każdego wierzchołka, co pozwala odtworzyć ścieżkę.
+   - Przykład: Znajdowanie ścieżki między dwoma wierzchołkami.
+
+3. Matematyczne aspekty:
+   - Graf jako struktura: G = (V, E), gdzie V to wierzchołki, E to krawędzie.
+   - Odległość w grafie: Liczba krawędzi na ścieżce między wierzchołkami.
+   - BFS buduje drzewo rozpinające (spanning tree), w którym odległości od wierzchołka startowego są minimalne.
+
+4. Przykłady praktyczne:
+   - Implementacja BFS w Pythonie.
+   - Znajdowanie najkrótszej ścieżki między dwoma wierzchołkami w grafie.
+   - Testowanie BFS na prostym grafie nieskierowanym.
+
+5. Kluczowe wnioski:
+   - BFS jest idealnym algorytmem do znajdowania najkrótszych ścieżek w grafach nieważonych.
+   - W porównaniu do DFS, BFS zapewnia minimalną liczbę kroków, ale wymaga więcej pamięci (kolejka).
+   - BFS ma szerokie zastosowanie, np. w algorytmach nawigacyjnych, analizie sieci czy rozwiązywaniu łamigłówek.
+
+Guttag podkreśla, że BFS to potężne narzędzie do rozwiązywania problemów związanych z grafami, szczególnie tam, gdzie kluczowe jest znalezienie najkrótszej ścieżki.

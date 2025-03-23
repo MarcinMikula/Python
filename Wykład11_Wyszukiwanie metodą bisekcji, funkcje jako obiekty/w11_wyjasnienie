@@ -1,0 +1,68 @@
+Wyjaśnienie kodu z Wykładu 11 krok po kroku
+
+Przykład 1: Wyszukiwanie metodą bisekcji – pierwiastek kwadratowy
+1. def sqrt_bisection(y, epsilon=0.01): Definiujemy funkcję do znajdowania pierwiastka kwadratowego metodą bisekcji.
+2. low = 0: Ustawiamy dolną granicę przedziału.
+3. high = y: Ustawiamy górną granicę na y (dla y = 25, high = 25).
+4. guess = (low + high) / 2: Obliczamy początkowe przybliżenie (12.5).
+5. steps = 0: Inicjalizujemy licznik kroków.
+6. while abs(guess * guess - y) >= epsilon: Pętla działa, dopóki przybliżenie nie jest wystarczająco dokładne.
+7. steps += 1: Zwiększamy licznik kroków.
+8. if guess * guess < y: Jeśli guess^2 jest za małe, szukamy w górnej połowie.
+9. low = guess: Przesuwamy dolną granicę.
+10. else: Jeśli guess^2 jest za duże, szukamy w dolnej połowie.
+11. high = guess: Przesuwamy górną granicę.
+12. guess = (low + high) / 2: Obliczamy nowe przybliżenie.
+13. return guess, steps: Zwracamy wynik i liczbę kroków.
+14. y = 25: Ustawiamy liczbę, której pierwiastek szukamy.
+15. result, steps = sqrt_bisection(y): Wywołujemy funkcję:
+    - guess = 12.5: 12.5^2 = 156.25 > 25, high = 12.5
+    - guess = 6.25: 6.25^2 = 39.0625 > 25, high = 6.25
+    - guess = 3.125: 3.125^2 = 9.765625 < 25, low = 3.125
+    - guess = 4.6875: 4.6875^2 ≈ 21.97 < 25, low = 4.6875
+    - ... (kontynuuje, aż osiągnie dokładność 0.01)
+    - Końcowy wynik: około 5.0 po 11 krokach.
+16. print("Pierwiastek z", y, "to około:", result): Wyświetlamy wynik: około 5.0.
+17. print("Liczba kroków:", steps): Wyświetlamy liczbę kroków: 11.
+
+Złożoność:
+- Liczba iteracji: log_2((high-low)/epsilon) = log_2(25/0.01) ≈ 11.
+- Złożoność: O(log n), gdzie n to wielkość przedziału podzielona przez epsilon.
+
+Przykład 2: Ogólna metoda bisekcji z funkcją jako argumentem
+1. def bisection_solver(func, a, b, epsilon=0.01): Definiujemy ogólną funkcję bisekcji, która rozwiązuje równanie func(x) = 0 na przedziale [a, b].
+2. if func(a) * func(b) >= 0: Sprawdzamy, czy funkcja zmienia znak na przedziale (warunek konieczny dla bisekcji).
+3. return None, 0: Jeśli nie zmienia znaku, zwracamy None.
+4. steps = 0: Inicjalizujemy licznik kroków.
+5. while (b - a) >= epsilon: Pętla działa, dopóki przedział nie jest mniejszy od epsilon.
+6. steps += 1: Zwiększamy licznik kroków.
+7. mid = (a + b) / 2: Obliczamy środek przedziału.
+8. if func(mid) == 0: Jeśli trafimy dokładnie w pierwiastek, zwracamy go.
+9. return mid, steps: Zwracamy wynik i liczbę kroków.
+10. elif func(mid) * func(a) < 0: Jeśli func(mid) i func(a) mają różne znaki, pierwiastek jest w lewej połowie.
+11. b = mid: Zawężamy przedział do [a, mid].
+12. else: Jeśli func(mid) i func(b) mają różne znaki, pierwiastek jest w prawej połowie.
+13. a = mid: Zawężamy przedział do [mid, b].
+14. return (a + b) / 2, steps: Zwracamy końcowe przybliżenie i liczbę kroków.
+15. def f(x): Definiujemy funkcję f(x) = x^2 - 25.
+16. return x * x - 25: Zwracamy x^2 - 25.
+17. root, steps = bisection_solver(f, 0, 10): Wywołujemy funkcję dla f(x) = 0 na przedziale [0, 10]:
+    - f(0) = -25, f(10) = 75, więc funkcja zmienia znak.
+    - mid = 5: f(5) = 0, więc znaleźliśmy dokładny pierwiastek.
+    - W praktyce pętla kontynuuje, aż przedział jest mniejszy od epsilon.
+    - Końcowy wynik: około 5.0 po 10 krokach.
+18. print("Rozwiązanie x^2 - 25 = 0:", root): Wyświetlamy wynik: około 5.0.
+19. print("Liczba kroków:", steps): Wyświetlamy liczbę kroków: 10.
+
+Złożoność:
+- Liczba iteracji: log_2((10-0)/0.01) ≈ 10.
+- Złożoność: O(log n).
+
+Przykład 3: Prosty przykład przekazywania funkcji
+1. def apply_function(func, value): Definiujemy funkcję, która stosuje przekazaną funkcję func do wartości value.
+2. return func(value): Wywołujemy func na value i zwracamy wynik.
+3. def cube(x): Definiujemy funkcję cube, która oblicza sześcian x.
+4. return x * x * x: Zwracamy x^3.
+5. value = 3: Ustawiamy wartość na 3.
+6. result = apply_function(cube, value): Wywołujemy apply_function, przekazując funkcję cube i wartość 3. cube(3) = 27.
+7. print("Sześcian", value, "to:", result): Wyświetlamy wynik: "Sześcian 3 to: 27".

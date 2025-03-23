@@ -1,0 +1,35 @@
+Wykład 18: Wprowadzenie do grafów
+
+Wykład 18, prowadzony przez profesora Johna Guttaga, wprowadza grafy jako strukturę danych do modelowania relacji między obiektami. Guttag omawia podstawy grafów, ich reprezentację w Pythonie oraz podstawowe algorytmy przeszukiwania grafów, takie jak przeszukiwanie w głąb (DFS). Kluczowe tematy:
+
+1. Grafy jako struktura danych:
+   - Graf to zbiór wierzchołków (nodes) połączonych krawędziami (edges).
+   - Rodzaje grafów: Skierowane (directed) i nieskierowane (undirected), ważone (weighted) i nieważone (unweighted).
+   - Zastosowania: Sieci społecznościowe, mapy, planowanie tras.
+
+2. Reprezentacja grafów:
+   - Lista sąsiedztwa (adjacency list): Każdy wierzchołek przechowuje listę sąsiadów.
+   - Macierz sąsiedztwa (adjacency matrix): Macierz 0 i 1 wskazująca połączenia między wierzchołkami.
+   - W Pythonie: Użycie słownika do implementacji listy sąsiedztwa.
+
+3. Przeszukiwanie grafów:
+   - Przeszukiwanie w głąb (Depth-First Search, DFS): Eksploruje graf, idąc jak najgłębiej wzdłuż jednej ścieżki, zanim się cofnie.
+   - Złożoność DFS: O(V + E), gdzie V to liczba wierzchołków, a E to liczba krawędzi.
+   - Przykład: Znajdowanie ścieżki w grafie.
+
+4. Matematyczne aspekty:
+   - Graf jako struktura matematyczna: Zbiór wierzchołków V i krawędzi E (G = (V, E)).
+   - Stopień wierzchołka: Liczba krawędzi wychodzących z wierzchołka.
+   - Ścieżki i cykle: DFS może być używane do wykrywania cykli w grafie.
+
+5. Przykłady praktyczne:
+   - Implementacja grafu za pomocą listy sąsiedztwa.
+   - Implementacja algorytmu DFS do przechodzenia grafu.
+   - Testowanie DFS na prostym grafie.
+
+6. Kluczowe wnioski:
+   - Grafy to wszechstronna struktura danych do modelowania relacji i zależności.
+   - Lista sąsiedztwa jest efektywną reprezentacją dla rzadkich grafów (mało krawędzi).
+   - DFS to podstawowy algorytm do eksploracji grafów, przydatny w wielu problemach, takich jak znajdowanie ścieżek czy wykrywanie cykli.
+
+Guttag podkreśla, że grafy i algorytmy na nich oparte, takie jak DFS, są fundamentem wielu zaawansowanych problemów w informatyce, od optymalizacji tras po analizę sieci.

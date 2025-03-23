@@ -1,0 +1,30 @@
+Wykład 20: Algorytmy na grafach – najkrótsza ścieżka w grafie ważonym (Dijkstra)
+
+Wykład 20, prowadzony przez profesora Johna Guttaga, wprowadza algorytm Dijkstry do znajdowania najkrótszej ścieżki w grafie ważonym. Guttag omawia, jak działa ten algorytm, jego implementację oraz zastosowanie w praktycznych problemach, takich jak planowanie tras. Kluczowe tematy:
+
+1. Algorytm Dijkstry:
+   - Algorytm znajduje najkrótszą ścieżkę od wierzchołka startowego do wszystkich innych wierzchołków w grafie ważonym z nieujemnymi wagami.
+   - Działa w sposób zachłanny: wybiera wierzchołek z najmniejszą dotychczasową odległością i aktualizuje odległości do jego sąsiadów.
+   - Złożoność: O((V + E) log V) przy użyciu kolejki priorytetowej (np. sterty binarnej).
+
+2. Grafy ważone:
+   - Krawędzie w grafie mają wagi (np. odległości, koszty).
+   - Reprezentacja: Lista sąsiedztwa, gdzie każda krawędź przechowuje wierzchołek docelowy i wagę.
+   - Przykład: Graf reprezentujący mapę z odległościami między miastami.
+
+3. Matematyczne aspekty:
+   - Graf ważony: G = (V, E, w), gdzie w(e) to waga krawędzi e.
+   - Najkrótsza ścieżka: Suma wag krawędzi na ścieżce między wierzchołkami.
+   - Relaksacja krawędzi: Aktualizacja odległości – jeśli d[u] + w(u,v) < d[v], to d[v] = d[u] + w(u,v).
+
+4. Przykłady praktyczne:
+   - Implementacja algorytmu Dijkstry w Pythonie z użyciem słownika i kolejki priorytetowej.
+   - Znajdowanie najkrótszej ścieżki w grafie ważonym.
+   - Testowanie algorytmu na prostym grafie.
+
+5. Kluczowe wnioski:
+   - Algorytm Dijkstry jest efektywnym sposobem znajdowania najkrótszych ścieżek w grafach ważonych z nieujemnymi wagami.
+   - W porównaniu do BFS, Dijkstra radzi sobie z wagami krawędzi, ale jest bardziej złożony obliczeniowo.
+   - Algorytm ma szerokie zastosowanie, np. w systemach nawigacyjnych, optymalizacji sieci czy planowaniu tras.
+
+Guttag podkreśla, że algorytm Dijkstry to klasyczne narzędzie w teorii grafów, które stanowi podstawę wielu nowoczesnych systemów, takich jak GPS czy routing w sieciach komputerowych.

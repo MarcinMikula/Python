@@ -1,0 +1,32 @@
+Wykład 15: Abstrakcja danych i struktury danych
+
+Wykład 15, prowadzony przez profesora Johna Guttaga, koncentruje się na abstrakcji danych i wprowadza bardziej zaawansowane struktury danych w kontekście programowania obiektowego. Guttag omawia, jak abstrakcja pozwala ukrywać szczegóły implementacji, oraz pokazuje, jak implementować własne struktury danych, takie jak stosy i kolejki. Kluczowe tematy:
+
+1. Abstrakcja danych:
+   - Abstrakcja danych to oddzielenie interfejsu (co struktura robi) od implementacji (jak to robi).
+   - Przykład: Użytkownik klasy nie musi wiedzieć, jak działa jej wnętrze, tylko jak jej używać.
+   - Korzyść: Ułatwia zarządzanie złożonością i umożliwia łatwe zmiany implementacji.
+
+2. Struktury danych:
+   - Stos (stack): Struktura LIFO (Last In, First Out) – ostatni element dodany jest pierwszy do usunięcia.
+   - Kolejka (queue): Struktura FIFO (First In, First Out) – pierwszy element dodany jest pierwszy do usunięcia.
+   - Implementacja tych struktur za pomocą list w Pythonie, ale w sposób obiektowy.
+
+3. Matematyczne aspekty:
+   - Stosy i kolejki jako abstrakcje matematyczne: Można je porównać do operacji na zbiorach z określonym porządkiem.
+   - Złożoność operacji:
+     - Stos: push i pop – O(1).
+     - Kolejka: enqueue i dequeue – O(1) (przy odpowiedniej implementacji).
+   - Przykład: Modelowanie procesów, takich jak cofanie operacji (stosy) czy obsługa zadań (kolejki).
+
+4. Przykłady praktyczne:
+   - Implementacja klasy Stack z metodami push, pop i is_empty.
+   - Implementacja klasy Queue z metodami enqueue, dequeue i is_empty.
+   - Użycie stosu do odwracania listy elementów.
+
+5. Kluczowe wnioski:
+   - Abstrakcja danych pozwala na tworzenie bardziej modularnego i łatwego do utrzymania kodu.
+   - Stosy i kolejki to podstawowe struktury danych, które znajdują zastosowanie w wielu problemach, np. w algorytmach przeszukiwania grafów.
+   - Programowanie obiektowe jest idealnym narzędziem do implementacji struktur danych.
+
+Guttag podkreśla, że abstrakcja danych i dobrze zaprojektowane struktury danych są kluczowe dla efektywnego rozwiązywania problemów w informatyce.

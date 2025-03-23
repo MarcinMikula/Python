@@ -1,0 +1,33 @@
+Wykład 13: Wprowadzenie do programowania obiektowego
+
+Wykład 13, prowadzony przez profesora Johna Guttaga, wprowadza podstawy programowania obiektowego (OOP) w Pythonie. Guttag omawia, czym są obiekty, klasy i jak używać ich do modelowania rzeczywistych problemów. To pierwszy krok w kierunku bardziej zaawansowanego programowania. Kluczowe tematy:
+
+1. Programowanie obiektowe (OOP):
+   - OOP to paradygmat programowania oparty na obiektach, które łączą dane (atrybuty) i metody (funkcje).
+   - Klasy: Szablony do tworzenia obiektów.
+   - Obiekty: Instancje klas, które przechowują dane i mają zdefiniowane zachowanie.
+   - Przykład: Klasa reprezentująca punkt w przestrzeni 2D.
+
+2. Podstawowe elementy OOP w Pythonie:
+   - Definiowanie klasy: Użycie słowa kluczowego class.
+   - Metoda __init__: Konstruktor, który inicjalizuje obiekt.
+   - Atrybuty: Dane przechowywane w obiekcie (np. self.x).
+   - Metody: Funkcje zdefiniowane w klasie, które operują na danych obiektu.
+   - Przykład: Klasa Point z metodami do obliczania odległości od początku układu współrzędnych.
+
+3. Matematyczne aspekty:
+   - Modelowanie matematyczne: Klasy mogą reprezentować obiekty matematyczne, np. punkty, wektory.
+   - Przykład: Obliczanie odległości między punktami (odległość euklidesowa: sqrt((x2-x1)^2 + (y2-y1)^2)).
+   - OOP pozwala na naturalne wyrażanie zależności matematycznych w kodzie.
+
+4. Przykłady praktyczne:
+   - Definiowanie klasy Point i tworzenie obiektów.
+   - Dodawanie metod do obliczania odległości od (0,0) i między punktami.
+   - Użycie obiektów do modelowania prostego problemu (np. przesunięcie punktu).
+
+5. Kluczowe wnioski:
+   - OOP pozwala na organizację kodu w sposób bardziej modularny i intuicyjny.
+   - Klasy i obiekty są idealne do modelowania rzeczywistych problemów, takich jak symulacje czy obliczenia matematyczne.
+   - Zrozumienie OOP otwiera drogę do bardziej zaawansowanych struktur danych i algorytmów.
+
+Guttag podkreśla, że programowanie obiektowe to potężne narzędzie, które pozwala na lepsze zarządzanie złożonością kodu i jest szeroko stosowane w nowoczesnym programowaniu.

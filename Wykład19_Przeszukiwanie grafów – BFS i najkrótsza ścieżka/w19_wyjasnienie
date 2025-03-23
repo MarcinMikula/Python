@@ -1,0 +1,79 @@
+Wyjaśnienie kodu z Wykładu 19 krok po kroku
+
+Przykład 1: Implementacja BFS
+1. class Graph: Definiujemy klasę Graph do reprezentacji grafu.
+2. def __init__(self): Konstruktor klasy Graph.
+3. self.graph = {}: Inicjalizujemy pusty słownik jako listę sąsiedztwa.
+4. def add_edge(self, u, v): Definiujemy metodę do dodawania krawędzi.
+5. if u not in self.graph: Jeśli wierzchołek u nie istnieje, tworzymy dla niego pustą listę.
+6. self.graph[u] = []: Inicjalizujemy listę sąsiadów dla u.
+7. if v not in self.graph: Jeśli wierzchołek v nie istnieje, tworzymy dla niego pustą listę.
+8. self.graph[v] = []: Inicjalizujemy listę sąsiadów dla v.
+9. self.graph[u].append(v): Dodajemy v do listy sąsiadów u.
+10. self.graph[v].append(u): Dodajemy u do listy sąsiadów v (graf nieskierowany).
+11. def bfs(self, start): Definiujemy metodę BFS do przechodzenia grafu.
+12. visited = set(): Tworzymy zbiór do śledzenia odwiedzonych wierzchołków.
+13. queue = [start]: Inicjalizujemy kolejkę z wierzchołkiem startowym.
+14. visited.add(start): Oznaczamy start jako odwiedzony.
+15. traversal = []: Tworzymy listę do przechowywania kolejności odwiedzin.
+16. while queue: Dopóki kolejka nie jest pusta:
+17. vertex = queue.pop(0): Pobieramy pierwszy wierzchołek z kolejki.
+18. traversal.append(vertex): Dodajemy wierzchołek do listy odwiedzin.
+19. for neighbor in self.graph[vertex]: Iterujemy po sąsiadach wierzchołka.
+20. if neighbor not in visited: Jeśli sąsiad nie był odwiedzony:
+21. visited.add(neighbor): Oznaczamy go jako odwiedzony.
+22. queue.append(neighbor): Dodajemy go do kolejki.
+23. return traversal: Zwracamy listę odwiedzin.
+24. g = Graph(): Tworzymy obiekt klasy Graph.
+25. g.add_edge(0, 1): Dodajemy krawędź między 0 a 1.
+26. g.add_edge(0, 2): Dodajemy krawędź między 0 a 2.
+27. g.add_edge(1, 2): Dodajemy krawędź między 1 a 2.
+28. g.add_edge(1, 3): Dodajemy krawędź między 1 a 3.
+29. g.add_edge(2, 3): Dodajemy krawędź między 2 a 3.
+30. g.add_edge(2, 4): Dodajemy krawędź między 2 a 4.
+31. print("Przechodzenie BFS od wierzchołka 0:", g.bfs(0)): Wykonujemy BFS od wierzchołka 0:
+    - Poziom 0: 0
+    - Poziom 1: 1, 2
+    - Poziom 2: 3 (od 1), 3 (od 2, pomijamy bo odwiedzony), 4 (od 2)
+    - Wynik: [0, 1, 2, 3, 4].
+
+Złożoność:
+- BFS: O(V + E), gdzie V to liczba wierzchołków, E to liczba krawędzi.
+- Tutaj: V = 5, E = 6, więc O(11) operacji.
+
+Przykład 2: Znajdowanie najkrótszej ścieżki za pomocą BFS
+1. class Graph: Definiujemy klasę Graph (rozszerzona wersja).
+2. def __init__(self): Konstruktor, jak wcześniej.
+3. def add_edge(self, u, v): Metoda add_edge, jak wcześniej.
+4. def bfs_shortest_path(self, start, end): Definiujemy metodę do znajdowania najkrótszej ścieżki.
+5. if start not in self.graph or end not in self.graph: Sprawdzamy, czy wierzchołki istnieją.
+6. return None: Jeśli nie, zwracamy None.
+7. visited = set(): Tworzymy zbiór odwiedzonych wierzchołków.
+8. queue = [(start, [start])]: Inicjalizujemy kolejkę z krotką (wierzchołek, ścieżka).
+9. visited.add(start): Oznaczamy start jako odwiedzony.
+10. while queue: Dopóki kolejka nie jest pusta:
+11. vertex, path = queue.pop(0): Pobieramy wierzchołek i jego ścieżkę.
+12. if vertex == end: Jeśli dotarliśmy do celu, zwracamy ścieżkę.
+13. return path: Zwracamy ścieżkę.
+14. for neighbor in self.graph[vertex]: Iterujemy po sąsiadach.
+15. if neighbor not in visited: Jeśli sąsiad nie był odwiedzony:
+16. visited.add(neighbor): Oznaczamy go jako odwiedzony.
+17. queue.append((neighbor, path + [neighbor])): Dodajemy sąsiada i nową ścieżkę do kolejki.
+18. return None: Jeśli nie ma ścieżki, zwracamy None.
+19. g = Graph(): Tworzymy obiekt klasy Graph.
+20. g.add_edge(0, 1): Dodajemy krawędź między 0 a 1.
+21. g.add_edge(0, 2): Dodajemy krawędź między 0 a 2.
+22. g.add_edge(1, 2): Dodajemy krawędź między 1 a 2.
+23. g.add_edge(1, 3): Dodajemy krawędź między 1 a 3.
+24. g.add_edge(2, 3): Dodajemy krawędź między 2 a 3.
+25. g.add_edge(2, 4): Dodajemy krawędź między 2 a 4.
+26. path = g.bfs_shortest_path(0, 4): Szukamy najkrótszej ścieżki z 0 do 4:
+    - Poziom 0: (0, [0])
+    - Poziom 1: (1, [0, 1]), (2, [0, 2])
+    - Poziom 2: (2, [0, 1, 2], pomijamy), (3, [0, 1, 3]), (3, [0, 2, 3], pomijamy), (4, [0, 2, 4])
+    - Znaleziono 4, ścieżka: [0, 2, 4].
+27. print("Najkrótsza ścieżka z 0 do 4:", path): Wyświetlamy ścieżkę: [0, 2, 4].
+
+Złożoność:
+- BFS: O(V + E), gdzie V = 5, E = 6.
+- Znajdowanie ścieżki: Taka sama złożoność, dodatkowo przechowujemy ścieżki.

@@ -1,0 +1,30 @@
+Wykład 24: Wprowadzenie do uczenia maszynowego
+
+Wykład 24, prowadzony przez profesora Johna Guttaga, kończy kurs wprowadzeniem do uczenia maszynowego (machine learning, ML). Guttag omawia podstawowe koncepcje ML, w tym uczenie nadzorowane, oraz pokazuje prosty przykład klasyfikacji za pomocą algorytmu k-najbliższych sąsiadów (k-NN). Kluczowe tematy:
+
+1. Uczenie maszynowe – podstawy:
+   - Uczenie nadzorowane: Model uczy się na podstawie danych z etykietami (np. klasyfikacja, regresja).
+   - Uczenie nienadzorowane: Model znajduje wzorce w danych bez etykiet (np. klasteryzacja).
+   - Algorytm k-NN: Klasyfikacja nowego punktu na podstawie k najbliższych sąsiadów w danych treningowych.
+
+2. Algorytm k-NN:
+   - Dla nowego punktu obliczamy odległość (np. euklidesową) do wszystkich punktów w danych treningowych.
+   - Wybieramy k najbliższych sąsiadów i przypisujemy nowemu punktowi najczęstszą klasę wśród nich.
+   - Złożoność: O(n) dla predykcji, gdzie n to liczba punktów treningowych.
+
+3. Matematyczne aspekty:
+   - Odległość euklidesowa: d = sqrt((x_1 - y_1)^2 + (x_2 - y_2)^2) dla dwóch punktów w 2D.
+   - Wybór k: Mały k może prowadzić do nadmiernego dopasowania (overfitting), duże k do zbyt ogólnego modelu.
+   - Złożoność: Obliczanie odległości dla n punktów i d wymiarów: O(n * d).
+
+4. Przykłady praktyczne:
+   - Implementacja prostego algorytmu k-NN w Pythonie.
+   - Klasyfikacja punktów w 2D (np. dwa gatunki kwiatów na podstawie długości i szerokości płatka).
+   - Testowanie algorytmu na małym zbiorze danych.
+
+5. Kluczowe wnioski:
+   - Uczenie maszynowe to potężne narzędzie do analizy danych i predykcji, oparte na statystyce i algorytmach.
+   - k-NN to prosty, ale skuteczny algorytm klasyfikacji, szczególnie dla małych zbiorów danych.
+   - ML wymaga zrozumienia danych, wyboru odpowiedniego modelu i oceny jego skuteczności.
+
+Guttag kończy kurs, podkreślając, że uczenie maszynowe to naturalne rozwinięcie umiejętności programistycznych i statystycznych zdobytych w trakcie kursu, otwierając drzwi do dalszej eksploracji w tej dziedzinie.

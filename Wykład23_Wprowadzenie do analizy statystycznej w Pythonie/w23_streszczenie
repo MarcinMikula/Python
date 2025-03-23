@@ -1,0 +1,31 @@
+Wykład 23: Wprowadzenie do analizy statystycznej w Pythonie
+
+Wykład 23, prowadzony przez profesora Johna Guttaga, wprowadza podstawy analizy statystycznej w kontekście programowania w Pythonie. Guttag omawia, jak używać statystyki do analizy danych, w tym obliczanie średniej, odchylenia standardowego oraz generowanie losowych danych. Kluczowe tematy:
+
+1. Podstawy statystyki:
+   - Średnia (mean): Średnia arytmetyczna zbioru danych.
+   - Odchylenie standardowe (standard deviation): Miara rozproszenia danych wokół średniej.
+   - Rozkład normalny: Wprowadzenie do rozkładu Gaussa i jego znaczenia w analizie danych.
+
+2. Statystyka w Pythonie:
+   - Użycie modułu random do generowania losowych danych.
+   - Obliczanie statystyk (średnia, odchylenie standardowe) za pomocą prostych funkcji.
+   - Generowanie danych z rozkładem normalnym za pomocą random.gauss().
+
+3. Matematyczne aspekty:
+   - Średnia: μ = (Σx_i) / n, gdzie x_i to wartości, n to liczba elementów.
+   - Wariancja: σ^2 = (Σ(x_i - μ)^2) / n.
+   - Odchylenie standardowe: σ = sqrt(σ^2).
+   - Rozkład normalny: PDF(x) = (1/(σ*sqrt(2π))) * exp(-(x-μ)^2/(2σ^2)).
+
+4. Przykłady praktyczne:
+   - Obliczanie średniej i odchylenia standardowego dla zbioru danych.
+   - Generowanie losowych danych z rozkładem normalnym.
+   - Analiza wygenerowanych danych (np. porównanie średniej i odchylenia).
+
+5. Kluczowe wnioski:
+   - Statystyka jest kluczowym narzędziem w analizie danych, szczególnie w kontekście uczenia maszynowego i nauk danych.
+   - Python oferuje proste narzędzia do analizy statystycznej, takie jak moduł random i podstawowe operacje matematyczne.
+   - Rozumienie rozkładu normalnego jest istotne, ponieważ wiele zjawisk w naturze i danych ma taki rozkład.
+
+Guttag podkreśla, że statystyka to fundament analizy danych, a umiejętność programistycznego obliczania miar statystycznych otwiera drzwi do bardziej zaawansowanych technik, takich jak uczenie maszynowe.

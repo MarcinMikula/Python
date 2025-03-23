@@ -1,0 +1,60 @@
+Wyjaśnienie kodu z Wykładu 20 krok po kroku
+
+Przykład 1: Implementacja algorytmu Dijkstry
+1. import heapq: Importujemy moduł heapq do obsługi kolejki priorytetowej.
+2. class Graph: Definiujemy klasę Graph do reprezentacji grafu ważonego.
+3. def __init__(self): Konstruktor klasy Graph.
+4. self.graph = {}: Inicjalizujemy pusty słownik jako listę sąsiedztwa.
+5. def add_edge(self, u, v, weight): Definiujemy metodę do dodawania krawędzi z wagą.
+6. if u not in self.graph: Jeśli wierzchołek u nie istnieje, tworzymy dla niego pustą listę.
+7. self.graph[u] = []: Inicjalizujemy listę sąsiadów dla u.
+8. if v not in self.graph: Jeśli wierzchołek v nie istnieje, tworzymy dla niego pustą listę.
+9. self.graph[v] = []: Inicjalizujemy listę sąsiadów dla v.
+10. self.graph[u].append((v, weight)): Dodajemy krawędź u -> v z wagą.
+11. self.graph[v].append((u, weight)): Dodajemy krawędź v -> u (graf nieskierowany).
+12. def dijkstra(self, start): Definiujemy metodę implementującą algorytm Dijkstry.
+13. distances = {vertex: float('infinity') for vertex in self.graph}: Inicjalizujemy odległości na nieskończoność.
+14. distances[start] = 0: Ustawiamy odległość startowego wierzchołka na 0.
+15. pq = [(0, start)]: Inicjalizujemy kolejkę priorytetową z krotką (odległość, wierzchołek).
+16. previous = {vertex: None for vertex in self.graph}: Inicjalizujemy słownik poprzedników.
+17. while pq: Dopóki kolejka nie jest pusta:
+18. current_distance, current_vertex = heapq.heappop(pq): Pobieramy wierzchołek o najmniejszej odległości.
+19. if current_distance > distances[current_vertex]: Jeśli odległość w kolejce jest większa, pomijamy.
+20. continue: Przechodzimy do następnej iteracji.
+21. for neighbor, weight in self.graph[current_vertex]: Iterujemy po sąsiadach wierzchołka.
+22. distance = current_distance + weight: Obliczamy nową odległość przez sąsiada.
+23. if distance < distances[neighbor]: Jeśli nowa odległość jest mniejsza:
+24. distances[neighbor] = distance: Aktualizujemy odległość.
+25. previous[neighbor] = current_vertex: Zapisujemy poprzednika.
+26. heapq.heappush(pq, (distance, neighbor)): Dodajemy sąsiada do kolejki.
+27. return distances, previous: Zwracamy odległości i poprzedników.
+28. def get_path(self, start, end, previous): Definiujemy metodę do odtwarzania ścieżki.
+29. path = []: Inicjalizujemy listę na ścieżkę.
+30. current = end: Zaczynamy od wierzchołka końcowego.
+31. while current is not None: Dopóki nie dotrzemy do startu:
+32. path.append(current): Dodajemy wierzchołek do ścieżki.
+33. current = previous[current]: Przechodzimy do poprzednika.
+34. return path[::-1]: Odwracamy ścieżkę i zwracamy.
+35. g = Graph(): Tworzymy obiekt klasy Graph.
+36. g.add_edge(0, 1, 4): Dodajemy krawędź 0-1 o wadze 4.
+37. g.add_edge(0, 2, 8): Dodajemy krawędź 0-2 o wadze 8.
+38. g.add_edge(1, 2, 2): Dodajemy krawędź 1-2 o wadze 2.
+39. g.add_edge(1, 3, 5): Dodajemy krawędź 1-3 o wadze 5.
+40. g.add_edge(2, 3, 5): Dodajemy krawędź 2-3 o wadze 5.
+41. g.add_edge(2, 4, 9): Dodajemy krawędź 2-4 o wadze 9.
+42. g.add_edge(3, 4, 4): Dodajemy krawędź 3-4 o wadze 4.
+43. distances, previous = g.dijkstra(0): Wykonujemy algorytm Dijkstry od wierzchołka 0:
+    - 0: 0
+    - 1: 4 (przez 0)
+    - 2: 6 (przez 0-1)
+    - 3: 9 (przez 0-1-2)
+    - 4: 13 (przez 0-1-2-3)
+44. print("Odległości od wierzchołka 0:", distances): Wyświetlamy odległości: {0: 0, 1: 4, 2: 6, 3: 9, 4: 13}.
+45. path = g.get_path(0, 4, previous): Odtwarzamy ścieżkę z 0 do 4:
+    - 4 → 3 → 2 → 1 → 0
+    - Po odwróceniu: [0, 1, 2, 3, 4]
+46. print("Najkrótsza ścieżka z 0 do 4:", path): Wyświetlamy ścieżkę: [0, 1, 2, 3, 4].
+
+Złożoność:
+- Dijkstra z kolejką priorytetową: O((V + E) log V).
+- Tutaj: V = 5, E = 7, więc O((5 + 7) log 5) ≈ O(12 log 5).

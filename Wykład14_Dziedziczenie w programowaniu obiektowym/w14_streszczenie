@@ -1,0 +1,30 @@
+Wykład 14: Dziedziczenie w programowaniu obiektowym
+
+Wykład 14, prowadzony przez profesora Johna Guttaga, pogłębia temat programowania obiektowego (OOP), wprowadzając koncepcję dziedziczenia. Guttag omawia, jak klasy mogą dziedziczyć atrybuty i metody od innych klas, co pozwala na ponowne wykorzystanie kodu i modelowanie hierarchii. Kluczowe tematy:
+
+1. Dziedziczenie (inheritance):
+   - Dziedziczenie pozwala tworzyć nową klasę (klasę pochodną) na podstawie istniejącej klasy (klasy bazowej).
+   - Klasa pochodna dziedziczy atrybuty i metody klasy bazowej, ale może je rozszerzać lub nadpisywać.
+   - Przykład: Klasa Animal jako klasa bazowa, a klasy Dog i Cat jako klasy pochodne.
+
+2. Kluczowe elementy dziedziczenia w Pythonie:
+   - Definiowanie klasy pochodnej: class DerivedClass(BaseClass).
+   - Nadpisywanie metod: Klasa pochodna może zdefiniować własną wersję metody z klasy bazowej.
+   - Użycie super(): Wywoływanie metod klasy bazowej z klasy pochodnej.
+   - Przykład: Klasa Person jako klasa bazowa i Student jako klasa pochodna.
+
+3. Matematyczne aspekty:
+   - Hierarchie klas można porównać do zbiorów w matematyce: klasa bazowa to zbiór ogólny, a klasy pochodne to podzbiory.
+   - Przykład: Modelowanie figur geometrycznych – klasa Shape jako klasa bazowa, a Circle i Rectangle jako klasy pochodne z własnymi metodami obliczania pola.
+
+4. Przykłady praktyczne:
+   - Definiowanie klasy bazowej Animal i klas pochodnych Dog i Cat.
+   - Rozszerzenie klasy Person o klasę Student z dodatkowymi atrybutami i metodami.
+   - Modelowanie figur geometrycznych z obliczaniem pola.
+
+5. Kluczowe wnioski:
+   - Dziedziczenie pozwala na ponowne wykorzystanie kodu i tworzenie hierarchii klas, co ułatwia zarządzanie złożonością.
+   - Nadpisywanie metod i użycie super() dają elastyczność w dostosowywaniu zachowania klas pochodnych.
+   - OOP z dziedziczeniem jest potężnym narzędziem do modelowania rzeczywistych problemów.
+
+Guttag podkreśla, że dziedziczenie to kluczowy mechanizm OOP, który pozwala na budowanie bardziej zorganizowanego i skalowalnego kodu, szczególnie w dużych projektach.

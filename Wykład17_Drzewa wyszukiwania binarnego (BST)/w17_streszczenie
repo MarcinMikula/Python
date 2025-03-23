@@ -1,0 +1,30 @@
+Wykład 17: Drzewa wyszukiwania binarnego (BST)
+
+Wykład 17, prowadzony przez profesora Johna Guttaga, koncentruje się na drzewach wyszukiwania binarnego (Binary Search Trees, BST), które są specjalnym rodzajem drzew binarnych. Guttag omawia ich właściwości, operacje (wstawianie, wyszukiwanie, usuwanie) oraz ich efektywność w porównaniu do innych struktur danych. Kluczowe tematy:
+
+1. Drzewa wyszukiwania binarnego (BST):
+   - BST to drzewo binarne, w którym dla każdego węzła: lewe poddrzewo zawiera wartości mniejsze, a prawe poddrzewo wartości większe od wartości węzła.
+   - Główne operacje: wstawianie (insert), wyszukiwanie (search), usuwanie (delete).
+   - Złożoność: Dla zrównoważonego BST – O(log n) dla wstawiania, wyszukiwania i usuwania.
+
+2. Właściwości i problemy:
+   - Zrównoważenie: Jeśli drzewo jest niezrównoważone (np. przypomina listę), złożoność operacji może wzrosnąć do O(n).
+   - Rozwiązania: Drzewa samobalansujące (np. AVL, Red-Black Trees) – omówione koncepcyjnie.
+   - Przykład: Budowanie BST i wyszukiwanie elementów.
+
+3. Matematyczne aspekty:
+   - Wysokość drzewa: Dla n węzłów, wysokość zrównoważonego drzewa to O(log n), ale w najgorszym przypadku (drzewo zdegenerowane) to O(n).
+   - Liczba operacji: Wyszukiwanie w BST wymaga porównań na każdym poziomie, stąd O(log n) w zrównoważonym przypadku.
+   - Porównanie z tablicą haszującą: BST – O(log n), tablica haszująca – O(1), ale BST zachowuje porządek elementów.
+
+4. Przykłady praktyczne:
+   - Implementacja BST z operacjami wstawiania i wyszukiwania.
+   - Przechodzenie drzewa w porządku inorder (daje posortowaną listę wartości).
+   - Testowanie wyszukiwania w BST.
+
+5. Kluczowe wnioski:
+   - BST to efektywna struktura danych do przechowywania i wyszukiwania danych, jeśli jest zrównoważona.
+   - W porównaniu do tablic haszujących, BST oferuje naturalne uporządkowanie danych.
+   - Problemy z niezrównoważeniem można rozwiązać za pomocą bardziej zaawansowanych struktur, takich jak drzewa AVL.
+
+Guttag podkreśla, że BST to ważna struktura danych, która łączy efektywność wyszukiwania z możliwością zachowania porządku, co czyni ją użyteczną w wielu zastosowaniach, takich jak bazy danych czy indeksowanie.

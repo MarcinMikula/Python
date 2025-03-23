@@ -1,0 +1,56 @@
+Wyjaśnienie kodu z Wykładu 24 krok po kroku
+
+Przykład 1: Implementacja algorytmu k-NN
+1. import math: Importujemy moduł math do obliczania pierwiastka kwadratowego.
+2. from collections import Counter: Importujemy Counter do zliczania najczęstszej klasy.
+3. def euclidean_distance(point1, point2): Definiujemy funkcję do obliczania odległości euklidesowej.
+4. return math.sqrt(sum((x - y) ** 2 for x, y in zip(point1, point2))): Obliczamy odległość:
+   - Dla point1=(x_1, y_1), point2=(x_2, y_2): sqrt((x_1 - x_2)^2 + (y_1 - y_2)^2).
+5. def knn(training_data, labels, new_point, k): Definiujemy funkcję k-NN.
+6. distances = []: Inicjalizujemy listę na odległości.
+7. for i, point in enumerate(training_data): Iterujemy po punktach treningowych.
+8. distance = euclidean_distance(point, new_point): Obliczamy odległość do nowego punktu.
+9. distances.append((distance, labels[i])): Zapisujemy krotkę (odległość, etykieta).
+10. distances.sort(key=lambda x: x[0]): Sortujemy według odległości.
+11. k_nearest = distances[:k]: Wybieramy k najbliższych sąsiadów.
+12. k_labels = [label for _, label in k_nearest]: Pobieramy etykiety k sąsiadów.
+13. most_common = Counter(k_labels).most_common(1): Znajdujemy najczęstszą klasę.
+14. return most_common[0][0]: Zwracamy przewidzianą klasę.
+
+Złożoność:
+- Obliczanie odległości: O(n * d), gdzie n to liczba punktów, d to liczba wymiarów.
+- Sortowanie: O(n log n).
+- Wybór klasy: O(k).
+- Całkowita: O(n log n) zdominowana przez sortowanie.
+
+Przykład 2: Testowanie k-NN na prostym zbiorze danych
+1. training_data = [(5.1, 3.5), (4.9, 3.0), (7.0, 3.2), (6.4, 3.2)]: Dane treningowe – punkty 2D.
+2. labels = [0, 0, 1, 1]: Etykiety: 0 (setosa), 1 (versicolor).
+3. new_point = (6.5, 3.0): Nowy punkt do sklasyfikowania.
+4. k = 3: Ustawiamy k=3 (3 najbliższych sąsiadów).
+5. predicted_label = knn(training_data, labels, new_point, k): Klasyfikujemy nowy punkt:
+   - Odległości:
+     - (5.1, 3.5): sqrt((6.5-5.1)^2 + (3.0-3.5)^2) = sqrt(1.4^2 + (-0.5)^2) ≈ 1.48.
+     - (4.9, 3.0): sqrt((6.5-4.9)^2 + (3.0-3.0)^2) = 1.6.
+     - (7.0, 3.2): sqrt((6.5-7.0)^2 + (3.0-3.2)^2) ≈ 0.54.
+     - (6.4, 3.2): sqrt((6.5-6.4)^2 + (3.0-3.2)^2) ≈ 0.22.
+   - 3 najbliżsi: (6.4, 3.2) (etykieta 1), (7.0, 3.2) (etykieta 1), (5.1, 3.5) (etykieta 0).
+   - Najczęstsza klasa: 1 (versicolor).
+6. print(f"Nowy punkt: {new_point}, Przewidywana klasa: {predicted_label}"): Wyświetlamy: (6.5, 3.0), 1.
+7. test_points = [(5.0, 3.4), (6.7, 3.1)]: Dodatkowe punkty testowe.
+8. for point in test_points: Iterujemy po punktach testowych.
+9. predicted_label = knn(training_data, labels, point, k): Klasyfikujemy każdy punkt:
+   - Dla (5.0, 3.4):
+     - Odległości: 0.14 (do 5.1, 3.5), 0.5 (do 4.9, 3.0), 2.15 (do 7.0, 3.2), 1.56 (do 6.4, 3.2).
+     - 3 najbliżsi: (5.1, 3.5) (0), (4.9, 3.0) (0), (6.4, 3.2) (1).
+     - Klasa: 0 (setosa).
+   - Dla (6.7, 3.1):
+     - Odległości: 1.86 (do 5.1, 3.5), 2.0 (do 4.9, 3.0), 0.36 (do 7.0, 3.2), 0.36 (do 6.4, 3.2).
+     - 3 najbliżsi: (6.4, 3.2) (1), (7.0, 3.2) (1), (5.1, 3.5) (0).
+     - Klasa: 1 (versicolor).
+10. print(f"Punkt: {point}, Przewidywana klasa: {predicted_label}"): Wyświetlamy wyniki.
+
+Matematyczny kontekst:
+- Odległość euklidesowa: sqrt((x_1 - x_2)^2 + (y_1 - y_2)^2).
+- Dla (6.5, 3.0) i (6.4, 3.2): sqrt((6.5-6.4)^2 + (3.0-3.2)^2) ≈ 0.22.
+- Wybór klasy: Większość wśród k=3 sąsiadów.

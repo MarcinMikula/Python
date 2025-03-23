@@ -1,0 +1,30 @@
+Wykład 16: Drzewa i struktury hierarchiczne
+
+Wykład 16, prowadzony przez profesora Johna Guttaga, wprowadza drzewa jako hierarchiczną strukturę danych, która jest szeroko stosowana w informatyce. Guttag omawia podstawy drzew binarnych, ich implementację w Pythonie oraz ich zastosowanie w rozwiązywaniu problemów, takich jak wyszukiwanie czy organizacja danych. Kluczowe tematy:
+
+1. Drzewa jako struktura danych:
+   - Drzewo to hierarchiczna struktura danych składająca się z węzłów: korzeń (root), liście (leaves) i dzieci (children).
+   - Drzewo binarne: Każdy węzeł ma co najwyżej dwoje dzieci (lewe i prawe).
+   - Zastosowania: Wyszukiwanie (drzewa BST), organizacja danych, parsowanie wyrażeń.
+
+2. Implementacja drzewa binarnego:
+   - Węzeł drzewa: Klasa z wartością oraz referencjami do lewego i prawego dziecka.
+   - Operacje: Wstawianie elementów, przechodzenie drzewa (np. inorder traversal).
+   - Przykład: Budowanie prostego drzewa binarnego i wyświetlanie jego elementów.
+
+3. Matematyczne aspekty:
+   - Wysokość drzewa: Liczba poziomów – dla zrównoważonego drzewa binarnego to O(log n), gdzie n to liczba węzłów.
+   - Liczba węzłów: W pełnym drzewie binarnym o wysokości h, liczba węzłów to 2^(h+1) - 1.
+   - Złożoność operacji: Wyszukiwanie i wstawianie w zrównoważonym drzewie – O(log n).
+
+4. Przykłady praktyczne:
+   - Implementacja klasy BinaryTree i Node do tworzenia drzewa binarnego.
+   - Wstawianie elementów do drzewa.
+   - Przechodzenie drzewa w porządku inorder (lewe poddrzewo, korzeń, prawe poddrzewo).
+
+5. Kluczowe wnioski:
+   - Drzewa binarne są potężną strukturą danych do przechowywania i wyszukiwania danych w sposób hierarchiczny.
+   - Zrównoważone drzewa (np. BST, AVL) zapewniają efektywność operacji (O(log n)).
+   - Drzewa są podstawą wielu zaawansowanych struktur danych i algorytmów, takich jak drzewa wyszukiwania binarnego (BST) czy sterty.
+
+Guttag podkreśla, że drzewa to fundamentalna struktura danych w informatyce, znajdująca zastosowanie w wielu dziedzinach, od baz danych po algorytmy grafowe.

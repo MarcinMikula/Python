@@ -1,0 +1,33 @@
+Wykład 12: Tablice haszujące
+
+Wykład 12, prowadzony przez profesora Johna Guttaga, wprowadza tablice haszujące (hash tables) jako efektywną strukturę danych do przechowywania i wyszukiwania danych. Guttag omawia, jak działają tablice haszujące, ich zalety w kontekście złożoności oraz potencjalne problemy, takie jak kolizje. Kluczowe tematy:
+
+1. Tablice haszujące (hash tables):
+   - Struktura danych przechowująca pary klucz-wartość, oparta na funkcji haszującej.
+   - Funkcja haszująca: Przekształca klucz na indeks w tablicy (np. hash(key) % table_size).
+   - W Pythonie tablice haszujące są implementowane jako słowniki (dict).
+   - Złożoność: Średnio O(1) dla operacji wyszukiwania, wstawiania i usuwania (przy założeniu dobrej funkcji haszującej).
+
+2. Kolizje:
+   - Kolizja występuje, gdy dwa różne klucze mapują się na ten sam indeks.
+   - Rozwiązania:
+     - Łańcuchowanie (chaining): Przechowywanie listy wartości pod jednym indeksem.
+     - Adresowanie otwarte (open addressing): Szukanie kolejnego wolnego miejsca.
+   - W Pythonie kolizje są obsługiwane automatycznie przez implementację dict.
+
+3. Matematyczne aspekty:
+   - Funkcja haszująca: Idealnie powinna równomiernie rozkładać klucze (minimalizacja kolizji).
+   - Współczynnik obciążenia (load factor): Stosunek liczby elementów do rozmiaru tablicy – wpływa na wydajność.
+   - Złożoność w najgorszym przypadku: O(n) przy wielu kolizjach, ale średnio O(1).
+
+4. Przykłady praktyczne:
+   - Implementacja prostej tablicy haszującej z łańcuchowaniem.
+   - Użycie słownika w Pythonie do zliczania wystąpień elementów.
+   - Porównanie wyszukiwania w tablicy haszującej (O(1)) z wyszukiwaniem liniowym (O(n)).
+
+5. Kluczowe wnioski:
+   - Tablice haszujące są niezwykle efektywne dla operacji klucz-wartość, jeśli funkcja haszująca jest dobrze zaprojektowana.
+   - Kolizje są nieuniknione, ale odpowiednie techniki (np. łańcuchowanie) minimalizują ich wpływ.
+   - W Pythonie słowniki to praktyczne zastosowanie tablic haszujących, używane w wielu problemach.
+
+Guttag podkreśla, że tablice haszujące to fundament wielu nowoczesnych systemów, takich jak bazy danych czy pamięci podręczne, dzięki ich szybkości i elastyczności.

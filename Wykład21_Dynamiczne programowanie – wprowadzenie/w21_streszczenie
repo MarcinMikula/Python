@@ -1,0 +1,32 @@
+                                                                                                                                                                         Wykład 21: Dynamiczne programowanie – wprowadzenie
+
+Wykład 21, prowadzony przez profesora Johna Guttaga, wprowadza dynamiczne programowanie (DP) jako technikę rozwiązywania problemów optymalizacyjnych. Guttag omawia podstawy DP, w tym podział problemu na mniejsze podproblemy i zapisywanie wyników w celu uniknięcia wielokrotnego obliczania. Kluczowe tematy:
+
+1. Dynamiczne programowanie (DP):
+   - DP to metoda rozwiązywania problemów przez rozbicie ich na mniejsze podproblemy i zapisywanie wyników (memoizacja lub tablicowanie).
+   - Kluczowe cechy: Nakładające się podproblemy i optymalna podstruktura.
+   - Przykład: Obliczanie ciągu Fibonacciego – porównanie podejścia rekurencyjnego z DP.
+
+2. Podejścia do DP:
+   - Top-down (memoizacja): Rekurencja z zapisywaniem wyników w słowniku.
+   - Bottom-up (tablicowanie): Iteracyjne budowanie rozwiązania od najmniejszych podproblemów.
+   - Przykład: Obliczanie Fibonacciego za pomocą obu metod.
+
+3. Matematyczne aspekty:
+   - Ciąg Fibonacciego: F(n) = F(n-1) + F(n-2), F(0) = 0, F(1) = 1.
+   - Złożoność:
+     - Rekurencja bez DP: O(2^n) – eksponencjalna.
+     - DP (top-down lub bottom-up): O(n) – liniowa.
+   - Liczba operacji: DP redukuje wielokrotne obliczanie tych samych podproblemów.
+
+4. Przykłady praktyczne:
+   - Implementacja obliczania ciągu Fibonacciego za pomocą rekurencji, memoizacji i tablicowania.
+   - Porównanie czasów wykonania dla różnych metod.
+   - Wprowadzenie do bardziej złożonych problemów DP (konceptualne, np. problem plecakowy).
+
+5. Kluczowe wnioski:
+   - Dynamiczne programowanie jest potężną techniką do rozwiązywania problemów optymalizacyjnych, takich jak znajdowanie najkrótszej ścieżki czy maksymalizacja zysku.
+   - DP pozwala znacząco zmniejszyć złożoność obliczeniową w porównaniu do naiwnych metod rekurencyjnych.
+   - Wybór między top-down a bottom-up zależy od problemu i preferencji programisty.
+
+Guttag podkreśla, że dynamiczne programowanie to kluczowa technika w informatyce, znajdująca zastosowanie w wielu dziedzinach, od algorytmów grafowych po bioinformatykę.
